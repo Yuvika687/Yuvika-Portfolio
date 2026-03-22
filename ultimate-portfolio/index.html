@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yuvika Malhotra — Portfolio</title>
+  <meta name="description" content="Portfolio of Yuvika Malhotra — showcasing skills, projects, and experience." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <!-- CDN for 3D Globe -->
+  <script src="https://cdn.jsdelivr.net/npm/cobe"></script>
+</head>
+<body>
+
+  <!-- ========== PRELOADER ========== -->
+  <div id="preloader">
+    <div class="preloader-inner">
+      <div class="preloader-ring">
+        <div class="preloader-ring-inner"></div>
+      </div>
+      <div class="preloader-text">YUVIKA MALHOTRA</div>
+      <div class="preloader-bar-track">
+        <div class="preloader-bar-fill" id="preloader-fill"></div>
+      </div>
+      <div class="preloader-percent" id="preloader-percent">0%</div>
+    </div>
+  </div>
+
+  <!-- ========== CUSTOM CURSOR ========== -->
+  <div id="cursor-container" aria-hidden="true"></div>
+
+  <!-- ========== STAR FIELD CANVAS (refined from space-portfolio) ========== -->
+  <canvas id="star-canvas" aria-hidden="true"></canvas>
+
+  <!-- ========== PARTICLE CANVAS ========== -->
+  <canvas id="particle-canvas" aria-hidden="true"></canvas>
+
+  <!-- ========== NAVIGATION ========== -->
+  <nav id="navbar" class="glass-nav">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo">
+        <span class="logo-bracket">&lt;</span>YM<span class="logo-bracket">/&gt;</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#about" class="nav-link" data-text="About">About</a></li>
+        <li><a href="#skills" class="nav-link" data-text="Skills">Skills</a></li>
+        <li><a href="#experience" class="nav-link" data-text="Experience">Experience</a></li>
+        <li><a href="#projects" class="nav-link" data-text="Projects">Projects</a></li>
+        <li><a href="#credentials" class="nav-link" data-text="Credentials">Credentials</a></li>
+        <li><a href="#contact" class="nav-link" data-text="Contact">Contact</a></li>
+      </ul>
+      <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobile-menu">
+      <a href="#about" class="mobile-link">About</a>
+      <a href="#skills" class="mobile-link">Skills</a>
+      <a href="#experience" class="mobile-link">Experience</a>
+      <a href="#projects" class="mobile-link">Projects</a>
+      <a href="#credentials" class="mobile-link">Credentials</a>
+      <a href="#contact" class="mobile-link">Contact</a>
+    </div>
+  </nav>
+
+  <!-- ========== HERO SECTION ========== -->
+  <section id="hero" class="section hero-section">
+    <!-- Black hole video background (from space-portfolio) -->
+    <video autoplay muted loop class="hero-blackhole-video" aria-hidden="true">
+      <source src="assets/blackhole.webm" type="video/webm" />
+    </video>
+    <!-- Animated gradient orbs -->
+    <div class="hero-orbs" aria-hidden="true">
+      <div class="orb orb-1"></div>
+      <div class="orb orb-2"></div>
+      <div class="orb orb-3"></div>
+      <div class="orb orb-4"></div>
+    </div>
+    <!-- Animated grid lines -->
+    <div class="hero-grid-bg" aria-hidden="true"></div>
+    <!-- Parallax layers -->
+    <div class="hero-bg-layers" id="parallax-container">
+      <div class="parallax-layer" data-speed="0.1"></div>
+      <div class="parallax-layer" data-speed="0.3"></div>
+      <div class="parallax-layer" data-speed="0.5"></div>
+    </div>
+
+    <div class="hero-content">
+      <div class="hero-left reveal reveal-left">
+        <!-- Sparkle badge -->
+        <div class="hero-badge glass-card-mini">
+          <span class="badge-pulse"></span>
+          <span class="badge-icon">✦</span>
+          <span>Available for work</span>
+        </div>
+        <h1 class="hero-name-large">
+          <span class="hero-line line-1">Hi, I'm</span>
+          <span class="hero-line line-2 gradient-text">Yuvika Malhotra</span>
+        </h1>
+        <div class="hero-role-wrapper">
+          <span class="hero-role-label">I build</span>
+          <div class="flip-words-container">
+            <span id="flip-word" class="flip-word">Intelligent</span>
+          </div>
+        </div>
+        <p class="hero-desc">AI/ML Engineer crafting production-grade deep learning systems, NLP pipelines, and scalable ML solutions that push boundaries.</p>
+        <div class="hero-buttons">
+          <a href="mailto:yuvikamalhotra@gmail.com" class="btn btn-primary btn-glow">
+            <span class="btn-shine"></span>
+            <span class="btn-icon">//</span> Hire Me
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="#contact" class="btn btn-secondary">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 4V16M12 16L7 11M12 16L17 11M4 20H20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Resume
+          </a>
+        </div>
+        <!-- Scrolling tech marquee -->
+        <div class="hero-marquee-wrapper">
+          <div class="hero-marquee">
+            <div class="marquee-track">
+              <span class="marquee-item">🐍 Python</span>
+              <span class="marquee-item">🔥 PyTorch</span>
+              <span class="marquee-item">🧠 TensorFlow</span>
+              <span class="marquee-item">📊 Scikit-Learn</span>
+              <span class="marquee-item">🤗 HuggingFace</span>
+              <span class="marquee-item">⚡ FastAPI</span>
+              <span class="marquee-item">🐳 Docker</span>
+              <span class="marquee-item">☸ Kubernetes</span>
+              <span class="marquee-item">🔗 LangChain</span>
+              <span class="marquee-item">📈 MLflow</span>
+              <!-- Duplicate for seamless loop -->
+              <span class="marquee-item">🐍 Python</span>
+              <span class="marquee-item">🔥 PyTorch</span>
+              <span class="marquee-item">🧠 TensorFlow</span>
+              <span class="marquee-item">📊 Scikit-Learn</span>
+              <span class="marquee-item">🤗 HuggingFace</span>
+              <span class="marquee-item">⚡ FastAPI</span>
+              <span class="marquee-item">🐳 Docker</span>
+              <span class="marquee-item">☸ Kubernetes</span>
+              <span class="marquee-item">🔗 LangChain</span>
+              <span class="marquee-item">📈 MLflow</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-right reveal reveal-right">
+        <div class="hero-visual">
+          <!-- Orbiting rings -->
+          <div class="orbit-container" aria-hidden="true">
+            <div class="orbit orbit-1"><div class="orbit-dot"></div></div>
+            <div class="orbit orbit-2"><div class="orbit-dot"></div></div>
+            <div class="orbit orbit-3"><div class="orbit-dot"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-indicator" id="scroll-indicator">
+      <div class="scroll-mouse"><div class="scroll-dot"></div></div>
+      <span>Scroll Down</span>
+    </div>
+  </section>
+
+  <!-- ========== ABOUT SECTION ========== -->
+  <section id="about" class="section">
+    <!-- Section-specific floating elements -->
+    <div class="section-decor about-decor" aria-hidden="true">
+      <div class="float-shape shape-1">◆</div>
+      <div class="float-shape shape-2">⬡</div>
+      <div class="float-shape shape-3">△</div>
+      <div class="gradient-line-h"></div>
+    </div>
+    <div class="container">
+      <div class="about-layout reveal reveal-up">
+        <!-- Left: Avatar with animated ring -->
+        <div class="about-avatar-col">
+          <div class="about-avatar-wrapper">
+            <div class="about-avatar-ring"></div>
+            <div class="about-avatar-ring ring-2"></div>
+            <img src="assets/avatar.png" alt="Yuvika Malhotra" class="about-avatar-img" />
+          </div>
+          <div class="about-avatar-badges">
+            <span class="about-info-badge glass-card-mini"><span class="badge-pulse"></span> 🎓 B.Tech CSE — LPU</span>
+            <span class="about-info-badge glass-card-mini">📍 Punjab, India</span>
+          </div>
+        </div>
+        <!-- Right: Heading + Bio -->
+        <div class="about-text-col">
+          <span class="section-tag glass-card-mini">
+            <span class="tag-dot"></span> 01. Introduction
+          </span>
+          <h2 class="about-heading">
+            Turning Data Into<br/>
+            <span class="gradient-text">Intelligent Solutions</span>
+          </h2>
+          <p class="about-bio">I'm <strong>Yuvika Malhotra</strong>, an aspiring <strong>AI/ML Engineer</strong> with hands-on experience in building and deploying intelligent systems. From <strong>machine learning pipelines</strong> to FastAPI backends, I turn complex data into real-world solutions. I actively contribute to <strong>open-source</strong> while pursuing my B.Tech in Computer Science at LPU, Punjab.</p>
+        </div>
+      </div>
+      <!-- Counters Grid -->
+      <div class="about-counters-row reveal reveal-up">
+        <div class="counter-card glass-card tilt-card" data-target="2" data-suffix="+">
+          <div class="counter-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M16 18L22 12L16 6M8 6L2 12L8 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <span class="counter-value">0</span><span class="counter-suffix">+</span>
+          <span class="counter-label">Internships</span>
+        </div>
+        <div class="counter-card glass-card tilt-card" data-target="2" data-suffix="+">
+          <div class="counter-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <span class="counter-value">0</span><span class="counter-suffix">+</span>
+          <span class="counter-label">Projects Deployed</span>
+        </div>
+        <div class="counter-card glass-card tilt-card" data-target="3" data-suffix="+">
+          <div class="counter-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M4 7V4C4 3.45 4.45 3 5 3H9L11 5H19C19.55 5 20 5.45 20 6V18C20 18.55 19.55 19 19 19H14M2 15V11C2 10.45 2.45 10 3 10H7L9 12H14C14.55 12 15 12.45 15 13V19C15 19.55 14.55 20 14 20H3C2.45 20 2 19.55 2 19V15Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <span class="counter-value">0</span><span class="counter-suffix">+</span>
+          <span class="counter-label">Certifications</span>
+        </div>
+        <div class="counter-card glass-card tilt-card" data-target="1" data-suffix="+">
+          <div class="counter-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" stroke="currentColor" stroke-width="2"/></svg></div>
+          <span class="counter-value">0</span><span class="counter-suffix">+</span>
+          <span class="counter-label">Open Source</span>
+        </div>
+      </div>
+      <!-- 3D Globe -->
+      <div class="globe-container reveal reveal-up">
+        <canvas id="globe-canvas"></canvas>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SKILLS SECTION ========== -->
+  <section id="skills" class="section">
+    <!-- Neural network background -->
+    <canvas id="neural-canvas" class="section-canvas" aria-hidden="true"></canvas>
+    <!-- Skills ambient video glow (reimagined from space-portfolio) -->
+    <video autoplay muted loop class="skills-video-bg" aria-hidden="true">
+      <source src="assets/skills-bg.webm" type="video/webm" />
+    </video>
+    <div class="section-decor skills-decor" aria-hidden="true">
+      <div class="hex-grid">
+        <div class="hex"></div><div class="hex"></div><div class="hex"></div>
+        <div class="hex"></div><div class="hex"></div><div class="hex"></div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="section-header reveal reveal-up">
+        <span class="section-tag glass-card-mini">
+          <span class="tag-dot"></span> 02. Expertise
+        </span>
+        <h2 class="section-title">
+          Skills &amp; <span class="gradient-text">Technologies</span>
+        </h2>
+        <p class="section-subtitle">Technologies I use to bring ideas to life</p>
+      </div>
+      <!-- Marquee ribbon -->
+      <div class="marquee-ribbon reveal reveal-up">
+        <div class="marquee-track">
+          <span>PYTHON</span><span>•</span><span>PYTORCH</span><span>•</span><span>TENSORFLOW</span><span>•</span><span>DOCKER</span><span>•</span><span>AWS</span><span>•</span><span>MLOPS</span><span>•</span><span>REACT</span><span>•</span><span>NLP</span><span>•</span>
+          <span>PYTHON</span><span>•</span><span>PYTORCH</span><span>•</span><span>TENSORFLOW</span><span>•</span><span>DOCKER</span><span>•</span><span>AWS</span><span>•</span><span>MLOPS</span><span>•</span><span>REACT</span><span>•</span><span>NLP</span><span>•</span>
+        </div>
+      </div>
+      <!-- Orbiting Tech Circles -->
+      <div class="orbit-wrapper reveal reveal-up">
+        <div class="orbit-path" style="width: 300px; height: 300px;"></div>
+        <div class="orbit-path" style="width: 450px; height: 450px;"></div>
+        <div id="orbit-container"></div>
+      </div>
+      <div class="skills-grid reveal reveal-up">
+        <div class="skill-card tilt-card glass-card">
+          <div class="skill-card-spotlight" aria-hidden="true"></div>
+          <div class="skill-icon-wrap"><div class="skill-icon">🐍</div></div>
+          <span class="skill-name">Python</span>
+          <div class="skill-bar"><div class="skill-bar-fill" data-level="95"></div></div>
+          <span class="skill-percent">95%</span>
+        </div>
+        <div class="skill-card tilt-card glass-card">
+          <div class="skill-card-spotlight" aria-hidden="true"></div>
+          <div class="skill-icon-wrap"><div class="skill-icon">🔥</div></div>
+          <span class="skill-name">PyTorch</span>
+          <div class="skill-bar"><div class="skill-bar-fill" data-level="90"></div></div>
+          <span class="skill-percent">90%</span>
+        </div>
+        <div class="skill-card tilt-card glass-card">
+          <div class="skill-card-spotlight" aria-hidden="true"></div>
+          <div class="skill-icon-wrap"><div class="skill-icon">🧠</div></div>
+          <span class="skill-name">TensorFlow</span>
+          <div class="skill-bar"><div class="skill-bar-fill" data-level="85"></div></div>
+          <span class="skill-percent">85%</span>
+        </div>
+        <div class="skill-card tilt-card glass-card">
+          <div class="skill-card-spotlight" aria-hidden="true"></div>
+          <div class="skill-icon-wrap"><div class="skill-icon">🐳</div></div>
+          <span class="skill-name">Docker</span>
+          <div class="skill-bar"><div class="skill-bar-fill" data-level="80"></div></div>
+          <span class="skill-percent">80%</span>
+        </div>
+        <div class="skill-card tilt-card glass-card">
+          <div class="skill-card-spotlight" aria-hidden="true"></div>
+          <div class="skill-icon-wrap"><div class="skill-icon">☁️</div></div>
+          <span class="skill-name">AWS</span>
+          <div class="skill-bar"><div class="skill-bar-fill" data-level="75"></div></div>
+          <span class="skill-percent">75%</span>
+        </div>
+        <div class="skill-card tilt-card glass-card">
+          <div class="skill-card-spotlight" aria-hidden="true"></div>
+          <div class="skill-icon-wrap"><div class="skill-icon">⚙️</div></div>
+          <span class="skill-name">MLOps</span>
+          <div class="skill-bar"><div class="skill-bar-fill" data-level="85"></div></div>
+          <span class="skill-percent">85%</span>
+        </div>
+        <div class="skill-card tilt-card glass-card">
+          <div class="skill-card-spotlight" aria-hidden="true"></div>
+          <div class="skill-icon-wrap"><div class="skill-icon">⚛️</div></div>
+          <span class="skill-name">React</span>
+          <div class="skill-bar"><div class="skill-bar-fill" data-level="80"></div></div>
+          <span class="skill-percent">80%</span>
+        </div>
+        <div class="skill-card tilt-card glass-card">
+          <div class="skill-card-spotlight" aria-hidden="true"></div>
+          <div class="skill-icon-wrap"><div class="skill-icon">📝</div></div>
+          <span class="skill-name">NLP</span>
+          <div class="skill-bar"><div class="skill-bar-fill" data-level="88"></div></div>
+          <span class="skill-percent">88%</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== TRUST INTERLUDE (reimagined from space-portfolio encryption) ========== -->
+  <section id="trust-interlude" class="trust-section">
+    <video autoplay muted loop class="trust-video-bg" aria-hidden="true">
+      <source src="assets/encryption-bg.webm" type="video/webm" />
+    </video>
+    <div class="trust-content">
+      <div class="trust-icon-container">
+        <div class="trust-shield">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="url(#shieldGrad)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <defs><linearGradient id="shieldGrad" x1="4" y1="2" x2="20" y2="22"><stop stop-color="#7c3aed"/><stop offset="1" stop-color="#06b6d4"/></linearGradient></defs>
+          </svg>
+          <div class="shield-pulse-ring"></div>
+          <div class="shield-pulse-ring ring-2"></div>
+        </div>
+      </div>
+      <div class="trust-badge glass-card-mini">
+        <span class="trust-sparkle">✦</span>
+        <span>Production-Grade Systems</span>
+      </div>
+      <h2 class="trust-title">
+        Built for <span class="gradient-text">Scale</span> &
+        <span class="gradient-text">Security</span>
+      </h2>
+      <p class="trust-desc">Enterprise-level ML pipelines with end-to-end encryption, fault tolerance, and 99.9% uptime. Every system I build is production-ready from day one.</p>
+      <div class="trust-metrics">
+        <div class="trust-metric glass-card-mini">
+          <span class="trust-metric-value">99.9%</span>
+          <span class="trust-metric-label">Uptime</span>
+        </div>
+        <div class="trust-metric glass-card-mini">
+          <span class="trust-metric-value"><50ms</span>
+          <span class="trust-metric-label">Latency</span>
+        </div>
+        <div class="trust-metric glass-card-mini">
+          <span class="trust-metric-value">E2E</span>
+          <span class="trust-metric-label">Encrypted</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== EXPERIENCE SECTION ========== -->
+  <section id="experience" class="section">
+    <div class="section-decor exp-decor" aria-hidden="true">
+      <div class="vertical-beam"></div>
+      <div class="floating-year y1">2024</div>
+      <div class="floating-year y2">2023</div>
+      <div class="floating-year y3">2022</div>
+    </div>
+    <div class="container">
+      <div class="section-header reveal reveal-up">
+        <span class="section-tag glass-card-mini">
+          <span class="tag-dot"></span> 03. Experience
+        </span>
+        <h2 class="section-title">
+          Work &amp; <span class="gradient-text">Experience</span>
+        </h2>
+        <p class="section-subtitle">Building expertise one project at a time</p>
+      </div>
+      <div class="timeline">
+        <div class="timeline-item reveal reveal-left">
+          <div class="timeline-dot"><div class="timeline-dot-ring"></div></div>
+          <div class="timeline-content glass-card">
+            <div class="timeline-header">
+              <div class="timeline-date-badge glass-card-mini">2024 — Present</div>
+              <div class="timeline-status live">● Active</div>
+            </div>
+            <h3 class="timeline-role">AI/ML Engineer</h3>
+            <p class="timeline-company">Leading Tech Company</p>
+            <p class="timeline-desc">Developing production-grade ML pipelines, deploying scalable deep learning models, and building end-to-end MLOps infrastructure for real-time inference systems.</p>
+            <div class="timeline-tags">
+              <span class="timeline-tag">PyTorch</span>
+              <span class="timeline-tag">Kubernetes</span>
+              <span class="timeline-tag">MLflow</span>
+            </div>
+          </div>
+        </div>
+        <div class="timeline-item reveal reveal-right">
+          <div class="timeline-dot"><div class="timeline-dot-ring"></div></div>
+          <div class="timeline-content glass-card">
+            <div class="timeline-header">
+              <div class="timeline-date-badge glass-card-mini">2023 — 2024</div>
+            </div>
+            <h3 class="timeline-role">Data Science Intern</h3>
+            <p class="timeline-company">Innovation Lab</p>
+            <p class="timeline-desc">Built NLP models for document classification, developed automated data pipelines, and contributed to graph-based fraud detection research.</p>
+            <div class="timeline-tags">
+              <span class="timeline-tag">NLP</span>
+              <span class="timeline-tag">Spark</span>
+              <span class="timeline-tag">GNN</span>
+            </div>
+          </div>
+        </div>
+        <div class="timeline-item reveal reveal-left">
+          <div class="timeline-dot"><div class="timeline-dot-ring"></div></div>
+          <div class="timeline-content glass-card">
+            <div class="timeline-header">
+              <div class="timeline-date-badge glass-card-mini">2022 — 2023</div>
+            </div>
+            <h3 class="timeline-role">Open Source Contributor</h3>
+            <p class="timeline-company">Various ML Projects</p>
+            <p class="timeline-desc">Contributed to major open-source ML frameworks, built community tools for model evaluation, and published novel training techniques.</p>
+            <div class="timeline-tags">
+              <span class="timeline-tag">HuggingFace</span>
+              <span class="timeline-tag">LangChain</span>
+              <span class="timeline-tag">GitHub</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PROJECTS SECTION ========== -->
+  <section id="projects" class="section">
+    <div class="section-decor projects-decor" aria-hidden="true">
+      <div class="corner-accent top-left"></div>
+      <div class="corner-accent top-right"></div>
+      <div class="corner-accent bottom-left"></div>
+      <div class="corner-accent bottom-right"></div>
+      <div class="gradient-sphere sphere-1"></div>
+      <div class="gradient-sphere sphere-2"></div>
+    </div>
+    <div class="container">
+      <div class="section-header reveal reveal-up">
+        <span class="section-tag glass-card-mini">
+          <span class="tag-dot"></span> 04. Projects
+        </span>
+        <h2 class="section-title">
+          My <span class="gradient-text">Projects</span>
+        </h2>
+        <p class="section-subtitle">Showcasing real-world AI applications</p>
+      </div>
+      <div class="projects-grid">
+        <div class="glow-card project-card-enhanced reveal reveal-up" data-delay="0">
+          <div class="glow" aria-hidden="true"></div>
+          <div class="project-spotlight" aria-hidden="true"></div>
+          <div class="project-content">
+            <div class="project-header">
+              <div class="project-tag-group">
+                <span class="project-tag">AI</span>
+                <span class="project-tag">Deep Learning</span>
+              </div>
+              <div class="project-number">01</div>
+            </div>
+            <h3 class="project-title">Financial Fraud Detection Using Graph Neural Networks</h3>
+            <p class="project-desc">A cutting-edge financial fraud detection system using GNNs. Leverages graph-structured data with spectral subgraph sampling and task-specific weight sharing for enhanced precision.</p>
+            <div class="project-tech">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">PyTorch</span>
+              <span class="tech-tag">Docker</span>
+              <span class="tech-tag">GNN</span>
+            </div>
+            <div class="project-footer">
+              <a href="#" class="project-link">
+                <span>View Project</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </a>
+              <a href="#" class="project-link-secondary">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="glow-card project-card-enhanced reveal reveal-up" data-delay="150">
+          <div class="glow" aria-hidden="true"></div>
+          <div class="project-spotlight" aria-hidden="true"></div>
+          <div class="project-content">
+            <div class="project-header">
+              <div class="project-tag-group">
+                <span class="project-tag">NLP</span>
+                <span class="project-tag">RAG</span>
+              </div>
+              <div class="project-number">02</div>
+            </div>
+            <h3 class="project-title">Agentic RAG for Legal Research</h3>
+            <p class="project-desc">AI-powered legal research agent revolutionizing information access using advanced RAG techniques with custom retriever fine-tuning and query routing via Llama Index.</p>
+            <div class="project-tech">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">LlamaIndex</span>
+              <span class="tech-tag">RAG</span>
+              <span class="tech-tag">LLM</span>
+            </div>
+            <div class="project-footer">
+              <a href="#" class="project-link">
+                <span>View Project</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </a>
+              <a href="#" class="project-link-secondary">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="glow-card project-card-enhanced reveal reveal-up" data-delay="300">
+          <div class="glow" aria-hidden="true"></div>
+          <div class="project-spotlight" aria-hidden="true"></div>
+          <div class="project-content">
+            <div class="project-header">
+              <div class="project-tag-group">
+                <span class="project-tag">Sentiment</span>
+                <span class="project-tag">FinTech</span>
+              </div>
+              <div class="project-number">03</div>
+            </div>
+            <h3 class="project-title">FABSA: Financial Aspect-Based Sentiment Analysis</h3>
+            <p class="project-desc">Fine-tuned DeBERTa for real-time financial sentiment analysis. Spring Boot backend with secure APIs, caching, and production deployment for financial decision-makers.</p>
+            <div class="project-tech">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">DeBERTa</span>
+              <span class="tech-tag">Spring Boot</span>
+              <span class="tech-tag">NLP</span>
+            </div>
+            <div class="project-footer">
+              <a href="#" class="project-link">
+                <span>View Project</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </a>
+              <a href="#" class="project-link-secondary">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CREDENTIALS SECTION (Certificates + Badges) ========== -->
+  <section id="credentials" class="section">
+    <div class="section-decor credentials-decor" aria-hidden="true">
+      <div class="gradient-sphere sphere-3"></div>
+      <div class="gradient-sphere sphere-4"></div>
+    </div>
+    <div class="container">
+      <div class="section-header reveal reveal-up">
+        <span class="section-tag glass-card-mini">
+          <span class="tag-dot"></span> 05. Credentials
+        </span>
+        <h2 class="section-title">
+          Industry <span class="gradient-text">Certifications</span>
+        </h2>
+        <p class="section-subtitle">Professional certifications and skill badges</p>
+      </div>
+
+      <!-- Certificate Carousel -->
+      <div class="cert-carousel-wrapper reveal reveal-up">
+        <div class="cert-carousel" id="cert-carousel">
+          <!-- Certificates loaded dynamically by certificates.js -->
+        </div>
+        <div class="cert-carousel-hint">Auto-scrolling · Hover to pause · Click to view</div>
+      </div>
+
+      <!-- Badges Grid -->
+      <div class="section-header badges-subheader reveal reveal-up">
+        <span class="section-tag glass-card-mini">
+          <span class="tag-dot"></span> 06. Achievements
+        </span>
+        <h2 class="section-title">
+          Skill <span class="gradient-text">Badges</span>
+        </h2>
+      </div>
+      <div class="badges-grid reveal reveal-up" id="badges-grid">
+        <!-- Badges loaded dynamically by certificates.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== EDUCATION SECTION ========== -->
+  <section id="education" class="section">
+    <div class="section-decor edu-decor" aria-hidden="true">
+      <div class="vertical-beam"></div>
+    </div>
+    <div class="container">
+      <div class="section-header reveal reveal-up">
+        <span class="section-tag glass-card-mini">
+          <span class="tag-dot"></span> 07. Education
+        </span>
+        <h2 class="section-title">
+          My <span class="gradient-text">Education</span>
+        </h2>
+        <p class="section-subtitle">Academic journey and qualifications</p>
+      </div>
+      <div class="education-grid reveal reveal-up">
+        <div class="edu-card glass-card">
+          <div class="edu-icon-wrap">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none"><path d="M22 10v6M2 10l10-5 10 5-10 5z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M6 12v5c3 3 9 3 12 0v-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="edu-info">
+            <div class="edu-date glass-card-mini">2022 — 2026</div>
+            <h3 class="edu-degree">Bachelor of Technology</h3>
+            <p class="edu-school">Computer Science & Engineering</p>
+            <p class="edu-details">Focused on AI/ML, Data Structures, and Software Engineering</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CONTACT SECTION ========== -->
+  <section id="contact" class="section">
+    <div class="section-decor contact-decor" aria-hidden="true">
+      <div class="mesh-gradient"></div>
+      <div class="float-emoji e1">🚀</div>
+      <div class="float-emoji e2">💡</div>
+      <div class="float-emoji e3">⚡</div>
+    </div>
+    <div class="container">
+      <div class="section-header reveal reveal-up">
+        <span class="section-tag glass-card-mini">
+          <span class="tag-dot"></span> 08. Contact
+        </span>
+        <h2 class="section-title">
+          Get In <span class="gradient-text">Touch</span>
+        </h2>
+        <p class="section-subtitle">Got a project? Let's build something amazing together</p>
+      </div>
+      <div class="contact-wrapper reveal reveal-up">
+        <div class="glass-card contact-card">
+          <div class="contact-card-glow" aria-hidden="true"></div>
+          <div class="contact-info-row">
+            <div class="contact-info-item">
+              <div class="contact-info-icon glass-card-mini">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><polyline points="22,6 12,13 2,6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <span>yuvikamalhotra@gmail.com</span>
+            </div>
+            <div class="contact-info-item">
+              <div class="contact-info-icon glass-card-mini">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 5.03 7.03 1 12 1C16.97 1 21 5.03 21 10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2"/></svg>
+              </div>
+              <span>India</span>
+            </div>
+          </div>
+          <form id="contact-form" class="contact-form">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="form-name">Name</label>
+                <input type="text" id="form-name" placeholder="Your name" required />
+                <div class="input-glow"></div>
+              </div>
+              <div class="form-group">
+                <label for="form-email">Email</label>
+                <input type="email" id="form-email" placeholder="you@example.com" required />
+                <div class="input-glow"></div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="form-message">Message</label>
+              <textarea id="form-message" placeholder="Tell me about your project..." rows="5" required></textarea>
+              <div class="input-glow"></div>
+            </div>
+            <button type="submit" class="btn btn-primary btn-glow btn-full">
+              <span class="btn-shine"></span>
+              Send Message
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M22 2L11 13M22 2L15 22L11 13M22 2L2 9L11 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer id="footer" class="footer">
+    <div class="footer-beam" aria-hidden="true"></div>
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-logo">
+          <span class="logo-bracket">&lt;</span>YM<span class="logo-bracket">/&gt;</span>
+        </div>
+        <div class="footer-socials">
+          <a href="https://github.com" target="_blank" rel="noopener" class="social-link" aria-label="GitHub">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12"/></svg>
+          </a>
+          <a href="https://linkedin.com" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+          <a href="https://twitter.com" target="_blank" rel="noopener" class="social-link" aria-label="Twitter">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+        </div>
+        <p class="footer-text">Designed & Built by <span class="gradient-text">Yuvika Malhotra</span> © 2024</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========== FLOATING DOCK ========== -->
+  <div class="floating-dock">
+    <a href="#hero" class="dock-item" data-tooltip="Home">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+    </a>
+    <a href="#about" class="dock-item" data-tooltip="About">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+    </a>
+    <a href="#skills" class="dock-item" data-tooltip="Skills">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v16Z"/><path d="M7 18h10"/><path d="M7 14h10"/><path d="M7 10h10"/><path d="M7 6h10"/></svg>
+    </a>
+    <a href="#experience" class="dock-item" data-tooltip="Experience">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+    </a>
+    <a href="#projects" class="dock-item" data-tooltip="Projects">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2H2v10h10V2z"/><path d="M22 2h-10v10h10V2z"/><path d="M12 12H2v10h10V12z"/><path d="M22 12h-10v10h10V12z"/></svg>
+    </a>
+    <a href="#credentials" class="dock-item" data-tooltip="Credentials">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7V4a2 2 0 0 1 2-2h8.5L20 7.5V20a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-3"/><polyline points="14 2 14 8 20 8"/><path d="M9 13l2 2 4-4"/></svg>
+    </a>
+    <a href="#contact" class="dock-item" data-tooltip="Contact">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l2.27-2.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    </a>
+  </div>
+
+  <script src="js/stars.js"></script>
+  <script src="js/particles.js"></script>
+  <script src="js/cursor.js"></script>
+  <script src="js/parallax.js"></script>
+  <script src="js/flip-words.js"></script>
+  <script src="js/counter.js"></script>
+  <script src="js/glow-card.js"></script>
+  <script src="js/tilt.js"></script>
+  <script src="js/scroll.js"></script>
+  <script src="js/neural.js"></script>
+  <script src="js/certificates.js"></script>
+  <script src="js/globe.js"></script>
+  <script src="js/orbit.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
