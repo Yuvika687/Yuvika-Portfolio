@@ -11,11 +11,11 @@
     'IMG_6149.PNG',
     'Infosys(Deep Learning for Developers).png',
     'Oracle.png',
-    'Screenshot 2026-03-22 at 1.03.36 PM.png',
-    'Screenshot 2026-03-22 at 1.50.19 PM.png',
-    'Screenshot 2026-03-22 at 1.50.31 PM.png',
+    'Screenshot 2026-03-22 at 1.03.36 PM.png',
+    'Screenshot 2026-03-22 at 1.50.19 PM.png',
+    'Screenshot 2026-03-22 at 1.50.31 PM.png',
     'Symposium workshop certificate.png',
-    'Unstop.png',
+    'Unstop_updated.png',
     'Yuvika Malhotra_Infosys Internship.png',
     'Yuvika Malhotra_Internship_Certificate (1).png'
   ];
@@ -24,6 +24,8 @@
   const badges = [
     '370270287_1401705290783240_4441420064204270093_n.png',
     'badge google.png',
+    'badge n.png',
+    'badge n2.png',
     'badge.png',
     'gssoc.png'
   ];
@@ -63,7 +65,19 @@
 
   certCarousel.appendChild(scrollTrack);
 
-  // ---- Build Badge Cards ----
+  // ---- Build Badge Cards for Marquee ----
+  badges.forEach(function (filename) {
+    var card = document.createElement('div');
+    card.className = 'badge-card';
+    var img = document.createElement('img');
+    img.src = 'Badges/' + filename;
+    img.alt = 'Badge';
+    img.loading = 'lazy';
+    card.appendChild(img);
+    badgesGrid.appendChild(card);
+  });
+
+  // Duplicate for seamless loop
   badges.forEach(function (filename) {
     var card = document.createElement('div');
     card.className = 'badge-card';
