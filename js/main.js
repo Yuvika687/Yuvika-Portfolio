@@ -62,4 +62,32 @@
   // Run immediately and also set up an observer in case it loads late
   removeSplineWatermark();
   setInterval(removeSplineWatermark, 1000); // Check periodically for late-loading Spline models
+
+  // --- GitHub Heatmap Generation ---
+  const heatmapGrid = document.getElementById('heatmap-grid');
+  if (heatmapGrid) {
+    // 53 columns * 7 days = 371 cells
+    const totalCells = 371;
+    for (let i = 0; i < totalCells; i++) {
+      const cell = document.createElement('div');
+      
+      // Random generation heavily biased to level 0 and 1, with few 2,3,4
+      // To simulate realistic active contribution graph based on user's theme
+      const rand = Math.random();
+      let level = 0;
+      if (rand > 0.95) level = 4;
+      else if (rand > 0.88) level = 3;
+      else if (rand > 0.70) level = 2;
+      else if (rand > 0.40) level = 1;
+      
+      cell.className = `heatmap-cell level-${level}`;
+      // Add tooltip showing hypothetical contributions
+      const date = new Date();
+      date.setDate(date.getDate() - (totalCells - i));
+      const contribs = level === 0 ? 0 : Math.floor(Math.random() * 10 * level) + 1;
+      cell.title = `${contribs} contributions on ${date.toDateString()}`;
+      
+      heatmapGrid.appendChild(cell);
+    }
+  }
 })();
