@@ -46,4 +46,20 @@
       }, 3000);
     });
   }
+
+  // --- Remove Spline Watermark via Shadow DOM ---
+  function removeSplineWatermark() {
+    const splines = document.querySelectorAll('spline-viewer');
+    splines.forEach(spline => {
+      // Access shadow root if available
+      if (spline.shadowRoot) {
+        const logo = spline.shadowRoot.querySelector('#logo');
+        if (logo) logo.remove();
+      }
+    });
+  }
+
+  // Run immediately and also set up an observer in case it loads late
+  removeSplineWatermark();
+  setInterval(removeSplineWatermark, 1000); // Check periodically for late-loading Spline models
 })();

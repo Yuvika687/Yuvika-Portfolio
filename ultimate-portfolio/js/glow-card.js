@@ -1,48 +1,61 @@
 /* ==========================================
-   GLOW CARD — Mouse-angle glow + spotlight
+   CURSOR LED GLOW EFFECT FOR CARDS
    ========================================== */
 
 (function () {
-  const cards = document.querySelectorAll('.glow-card');
+  // Target all requested card types
+  const cards = document.querySelectorAll(`
+    .edu-card,
+    .alt-timeline-card,
+    .cert-card,
+    .badge-card,
+    .project-stack-card,
+    .glass-card,
+    .contact-card
+  `);
+
   if (!cards.length) return;
 
   cards.forEach((card) => {
-    const spotlight = card.querySelector('.project-spotlight');
+    // Add base class for CSS styling
+    card.classList.add('cursor-glow-element');
 
-    card.addEventListener('mousemove', (e) => {
-      const rect = card.getBoundingClientRect();
-      const mouseX = e.clientX - rect.left;
-      const mouseY = e.clientY - rect.top;
-      const centerX = rect.width / 2;
-      const centerY = rect.height / 2;
+    // Assign specific glow colors based on the card type
+    let glowColor = 'rgba(6, 182, 212, 0.8)'; // default cyan
 
-      // Glow border angle
-      let angle = Math.atan2(mouseY - centerY, mouseX - centerX) * (180 / Math.PI);
-      angle = (angle + 360) % 360;
-      card.style.setProperty('--start', angle + 60);
-
-      // Spotlight follower
-      if (spotlight) {
-        spotlight.style.left = (mouseX - 125) + 'px';
-        spotlight.style.top = (mouseY - 125) + 'px';
+    if (card.classList.contains('project-stack-card')) {
+      glowColor = 'rgba(124, 58, 237, 0.8)'; // Purple #7C3AED
+    } else if (card.classList.contains('cert-card')) {
+      glowColor = 'rgba(255, 255, 255, 0.6)'; // White/silver for certs
+    } else if (card.classList.contains('badge-card')) {
+      glowColor = 'rgba(6, 182, 212, 0.8)'; // Cyan
+    } else if (card.classList.contains('edu-card')) {
+      // Check parent for specific dot colors to match accent
+      const parent = card.closest('.edu-timeline-item');
+      if (parent) {
+        if (parent.querySelector('.dot-purple')) {
+          glowColor = 'rgba(124, 58, 237, 0.8)'; // Purple
+        } else if (parent.querySelector('.dot-blue')) {
+          glowColor = 'rgba(59, 130, 246, 0.8)'; // Blue
+        } else {
+          glowColor = 'rgba(6, 182, 212, 0.8)'; // Cyan
+        }
       }
-    });
+    } else if (card.classList.contains('alt-timeline-card')) {
+      glowColor = 'rgba(6, 182, 212, 0.8)'; // Cyan
+    }
 
-    card.addEventListener('mouseleave', () => {
-      card.style.setProperty('--start', 0);
-    });
-  });
+    // Set internal CSS variable for color
+    card.style.setProperty('--card-glow-color', glowColor);
 
-  // Skill card spotlight
-  const skillCards = document.querySelectorAll('.skill-card');
-  skillCards.forEach((card) => {
-    const spot = card.querySelector('.skill-card-spotlight');
-    if (!spot) return;
-
+    // Track mouse position natively relative to card bounding box
     card.addEventListener('mousemove', (e) => {
       const rect = card.getBoundingClientRect();
-      spot.style.left = (e.clientX - rect.left - 60) + 'px';
-      spot.style.top = (e.clientY - rect.top - 60) + 'px';
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      
+      card.style.setProperty('--mouse-x', `${x}px`);
+      card.style.setProperty('--mouse-y', `${y}px`);
     });
   });
 })();

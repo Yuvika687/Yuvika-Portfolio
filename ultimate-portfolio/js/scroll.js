@@ -15,6 +15,7 @@
           setTimeout(() => {
             entry.target.classList.add('visible');
           }, delay);
+          revealObserver.unobserve(entry.target);
         }
       });
     },

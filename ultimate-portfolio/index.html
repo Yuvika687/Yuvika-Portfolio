@@ -11,6 +11,8 @@
   <link rel="stylesheet" href="css/style.css" />
   <!-- CDN for 3D Globe -->
   <script src="https://cdn.jsdelivr.net/npm/cobe"></script>
+  <!-- Spline Viewer -->
+  <script type="module" src="https://unpkg.com/@splinetool/viewer@1.12.70/build/spline-viewer.js"></script>
 </head>
 <body>
 
@@ -42,7 +44,7 @@
     <div class="nav-pill">
       <div class="nav-inner">
         <a href="#hero" class="nav-logo">
-          <span class="logo-bracket">&lt;</span>yogender<span class="logo-slash">/</span><span class="logo-bracket">&gt;</span>
+          <span class="logo-bracket">&lt;</span>Yuvika Malhotra<span class="logo-slash">/</span><span class="logo-bracket">&gt;</span>
         </a>
         <ul class="nav-links">
           <li><a href="#about" class="nav-link" data-text="About">About</a></li>
@@ -104,16 +106,17 @@
           <span class="hero-line line-2 gradient-text">Yuvika Malhotra</span>
         </h1>
         <div class="hero-role-wrapper">
-          <span class="hero-role-label">I build</span>
-          <div class="flip-words-container">
-            <span id="flip-word" class="flip-word">Intelligent</span>
+          <span class="hero-role-label">I am a</span>
+          <div class="hero-typewriter-container">
+            <span id="hero-typewriter" class="hero-typewriter-text"></span>
+            <span class="hero-typewriter-cursor">|</span>
           </div>
         </div>
-        <p class="hero-desc">AI/ML Engineer crafting production-grade deep learning systems, NLP pipelines, and scalable ML solutions that push boundaries.</p>
+        <p class="hero-desc">I design and develop intelligent, user-focused applications that combine creativity with technology. From AI-powered systems to full-stack web solutions, I love building experiences that make an impact.</p>
         <div class="hero-buttons">
-          <a href="mailto:yuvikamalhotra@gmail.com" class="btn btn-primary btn-glow">
+          <a href="#projects" class="btn btn-primary btn-glow">
             <span class="btn-shine"></span>
-            <span class="btn-icon">//</span> Hire Me
+            <span class="btn-icon">//</span> View My Work
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
           <a href="#contact" class="btn btn-secondary">
@@ -168,32 +171,35 @@
           </span>
           <h2 class="about-heading">
             Turning Data Into<br/>
-            <span class="gradient-text">Intelligent Solutions</span>
+            <span class="typewriter-wrapper">
+              <span class="gradient-text typewriter-text">Intelligent Solutions</span>
+            </span>
           </h2>
           <p class="about-bio">I'm <strong>Yuvika Malhotra</strong>, an aspiring <strong>AI/ML Engineer</strong> with hands-on experience in building and deploying intelligent systems. From <strong>machine learning pipelines</strong> to FastAPI backends, I turn complex data into real-world solutions. I actively contribute to <strong>open-source</strong> while pursuing my B.Tech in Computer Science at LPU, Punjab.</p>
-        </div>
-      </div>
-      <!-- Counters Grid -->
-      <div class="about-counters-row reveal reveal-up">
-        <div class="counter-card glass-card tilt-card" data-target="2" data-suffix="+">
-          <div class="counter-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M16 18L22 12L16 6M8 6L2 12L8 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-          <span class="counter-value">0</span><span class="counter-suffix">+</span>
-          <span class="counter-label">Internships</span>
-        </div>
-        <div class="counter-card glass-card tilt-card" data-target="2" data-suffix="+">
-          <div class="counter-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-          <span class="counter-value">0</span><span class="counter-suffix">+</span>
-          <span class="counter-label">Projects Deployed</span>
-        </div>
-        <div class="counter-card glass-card tilt-card" data-target="3" data-suffix="+">
-          <div class="counter-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M4 7V4C4 3.45 4.45 3 5 3H9L11 5H19C19.55 5 20 5.45 20 6V18C20 18.55 19.55 19 19 19H14M2 15V11C2 10.45 2.45 10 3 10H7L9 12H14C14.55 12 15 12.45 15 13V19C15 19.55 14.55 20 14 20H3C2.45 20 2 19.55 2 19V15Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-          <span class="counter-value">0</span><span class="counter-suffix">+</span>
-          <span class="counter-label">Certifications</span>
-        </div>
-        <div class="counter-card glass-card tilt-card" data-target="1" data-suffix="+">
-          <div class="counter-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" stroke="currentColor" stroke-width="2"/></svg></div>
-          <span class="counter-value">0</span><span class="counter-suffix">+</span>
-          <span class="counter-label">Open Source</span>
+          
+          <!-- Counters Grid -->
+          <div class="about-counters-row">
+            <div class="counter-card glass-card tilt-card reveal reveal-scale" data-delay="0" data-target="2" data-suffix="+">
+              <div class="counter-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M16 18L22 12L16 6M8 6L2 12L8 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <span class="counter-value">0</span><span class="counter-suffix">+</span>
+              <span class="counter-label">Internships</span>
+            </div>
+            <div class="counter-card glass-card tilt-card reveal reveal-scale" data-delay="100" data-target="9" data-suffix="+">
+              <div class="counter-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <span class="counter-value">0</span><span class="counter-suffix">+</span>
+              <span class="counter-label">Projects Deployed</span>
+            </div>
+            <div class="counter-card glass-card tilt-card reveal reveal-scale" data-delay="200" data-target="18" data-suffix="+">
+              <div class="counter-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M4 7V4C4 3.45 4.45 3 5 3H9L11 5H19C19.55 5 20 5.45 20 6V18C20 18.55 19.55 19 19 19H14M2 15V11C2 10.45 2.45 10 3 10H7L9 12H14C14.55 12 15 12.45 15 13V19C15 19.55 14.55 20 14 20H3C2.45 20 2 19.55 2 19V15Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <span class="counter-value">0</span><span class="counter-suffix">+</span>
+              <span class="counter-label">Certifications</span>
+            </div>
+            <div class="counter-card glass-card tilt-card reveal reveal-scale" data-delay="300" data-target="2" data-suffix="+">
+              <div class="counter-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" stroke="currentColor" stroke-width="2"/></svg></div>
+              <span class="counter-value">0</span><span class="counter-suffix">+</span>
+              <span class="counter-label">Open Source</span>
+            </div>
+          </div>
         </div>
       </div>
       <!-- 3D Globe -->
@@ -213,91 +219,88 @@
         <h2 class="section-title">
           Skills &amp; <span class="gradient-text">Technologies</span>
         </h2>
-        <p class="section-subtitle">Technologies I use to bring ideas to life</p>
-      </div>
-
-      <!-- Infinite Scrolling Tech Marquee -->
-      <div class="tech-marquee-wrapper reveal reveal-up">
+        <p class="section-subtitle">Technologies I use to bring ideas to lif      <!-- Infinite Scrolling Tech Marquee -->
+      <div class="tech-marquee-wrapper">
         <div class="tech-marquee-track" id="tech-marquee">
           <!-- Duplicate contents for seamless looping -->
-          <div class="tech-card glass-card-mini">
+          <div class="tech-card glass-card-mini reveal reveal-left" data-delay="0">
             <span class="tech-icon">🐍</span> <span class="tech-name">Python</span>
           </div>
-          <div class="tech-card glass-card-mini">
+          <div class="tech-card glass-card-mini reveal reveal-right" data-delay="100">
             <span class="tech-icon">🔥</span> <span class="tech-name">PyTorch</span>
           </div>
-          <div class="tech-card glass-card-mini">
+          <div class="tech-card glass-card-mini reveal reveal-left" data-delay="200">
             <span class="tech-icon">🧠</span> <span class="tech-name">TensorFlow</span>
           </div>
-          <div class="tech-card glass-card-mini">
+          <div class="tech-card glass-card-mini reveal reveal-right" data-delay="300">
             <span class="tech-icon">🌙</span> <span class="tech-name">Scikit-learn</span>
           </div>
-          <div class="tech-card glass-card-mini">
+          <div class="tech-card glass-card-mini reveal reveal-left" data-delay="400">
             <span class="tech-icon">🤗</span> <span class="tech-name">HuggingFace</span>
           </div>
-          <div class="tech-card glass-card-mini">
+          <div class="tech-card glass-card-mini reveal reveal-right" data-delay="500">
             <span class="tech-icon">&lt;/&gt;</span> <span class="tech-name">HTML & CSS</span>
           </div>
-          <div class="tech-card glass-card-mini">
+          <div class="tech-card glass-card-mini reveal reveal-left" data-delay="600">
             <span class="tech-icon">⚡</span> <span class="tech-name">FastAPI</span>
           </div>
-          <div class="tech-card glass-card-mini">
+          <div class="tech-card glass-card-mini reveal reveal-right" data-delay="700">
             <span class="tech-icon">👑</span> <span class="tech-name">Streamlit</span>
           </div>
-          <div class="tech-card glass-card-mini">
+          <div class="tech-card glass-card-mini reveal reveal-left" data-delay="800">
             <span class="tech-icon">🐳</span> <span class="tech-name">Docker</span>
           </div>
-          <div class="tech-card glass-card-mini">
+          <div class="tech-card glass-card-mini reveal reveal-right" data-delay="900">
             <span class="tech-icon">☁️</span> <span class="tech-name">AWS</span>
           </div>
-          <div class="tech-card glass-card-mini">
+          <div class="tech-card glass-card-mini reveal reveal-left" data-delay="1000">
             <span class="tech-icon">⚙️</span> <span class="tech-name">MLOps</span>
           </div>
-          <div class="tech-card glass-card-mini">
+          <div class="tech-card glass-card-mini reveal reveal-right" data-delay="1100">
             <span class="tech-icon">⚛️</span> <span class="tech-name">React</span>
           </div>
-          <div class="tech-card glass-card-mini">
+          <div class="tech-card glass-card-mini reveal reveal-left" data-delay="1200">
             <span class="tech-icon">📝</span> <span class="tech-name">NLP</span>
           </div>
 
           <!-- Duplicated list -->
-          <div class="tech-card glass-card-mini">
+          <div class="tech-card glass-card-mini reveal reveal-right" data-delay="0">
             <span class="tech-icon">🐍</span> <span class="tech-name">Python</span>
           </div>
-          <div class="tech-card glass-card-mini">
+          <div class="tech-card glass-card-mini reveal reveal-left" data-delay="100">
             <span class="tech-icon">🔥</span> <span class="tech-name">PyTorch</span>
           </div>
-          <div class="tech-card glass-card-mini">
+          <div class="tech-card glass-card-mini reveal reveal-right" data-delay="200">
             <span class="tech-icon">🧠</span> <span class="tech-name">TensorFlow</span>
           </div>
-          <div class="tech-card glass-card-mini">
+          <div class="tech-card glass-card-mini reveal reveal-left" data-delay="300">
             <span class="tech-icon">🌙</span> <span class="tech-name">Scikit-learn</span>
           </div>
-          <div class="tech-card glass-card-mini">
+          <div class="tech-card glass-card-mini reveal reveal-right" data-delay="400">
             <span class="tech-icon">🤗</span> <span class="tech-name">HuggingFace</span>
           </div>
-          <div class="tech-card glass-card-mini">
+          <div class="tech-card glass-card-mini reveal reveal-left" data-delay="500">
             <span class="tech-icon">&lt;/&gt;</span> <span class="tech-name">HTML & CSS</span>
           </div>
-          <div class="tech-card glass-card-mini">
+          <div class="tech-card glass-card-mini reveal reveal-right" data-delay="600">
             <span class="tech-icon">⚡</span> <span class="tech-name">FastAPI</span>
           </div>
-          <div class="tech-card glass-card-mini">
+          <div class="tech-card glass-card-mini reveal reveal-left" data-delay="700">
             <span class="tech-icon">👑</span> <span class="tech-name">Streamlit</span>
           </div>
-          <div class="tech-card glass-card-mini">
+          <div class="tech-card glass-card-mini reveal reveal-right" data-delay="800">
             <span class="tech-icon">🐳</span> <span class="tech-name">Docker</span>
           </div>
-          <div class="tech-card glass-card-mini">
+          <div class="tech-card glass-card-mini reveal reveal-left" data-delay="900">
             <span class="tech-icon">☁️</span> <span class="tech-name">AWS</span>
           </div>
-          <div class="tech-card glass-card-mini">
+          <div class="tech-card glass-card-mini reveal reveal-right" data-delay="1000">
             <span class="tech-icon">⚙️</span> <span class="tech-name">MLOps</span>
           </div>
-          <div class="tech-card glass-card-mini">
+          <div class="tech-card glass-card-mini reveal reveal-left" data-delay="1100">
             <span class="tech-icon">⚛️</span> <span class="tech-name">React</span>
           </div>
-          <div class="tech-card glass-card-mini">
+          <div class="tech-card glass-card-mini reveal reveal-right" data-delay="1200">
             <span class="tech-icon">📝</span> <span class="tech-name">NLP</span>
           </div>
         </div>
@@ -328,7 +331,7 @@
         </div>
 
         <!-- Card 1 — LEFT -->
-        <div class="alt-timeline-item alt-left" data-index="0">
+        <div class="alt-timeline-item alt-left reveal reveal-left" data-index="0">
           <div class="alt-timeline-dot"><div class="alt-dot-ring"></div></div>
           <div class="alt-timeline-card glass-card">
             <span class="alt-type-pill pill-internship">Internship</span>
@@ -362,8 +365,8 @@
           </div>
         </div>
 
-        <!-- Card 2 — LEFT -->
-        <div class="alt-timeline-item alt-left" data-index="1">
+        <!-- Card 2 — RIGHT -->
+        <div class="alt-timeline-item alt-right reveal reveal-right" data-index="1">
           <div class="alt-timeline-dot"><div class="alt-dot-ring"></div></div>
           <div class="alt-timeline-card glass-card">
             <span class="alt-type-pill pill-internship">Internship</span>
@@ -398,7 +401,7 @@
         </div>
 
         <!-- Card 3 — LEFT -->
-        <div class="alt-timeline-item alt-left" data-index="2">
+        <div class="alt-timeline-item alt-left reveal reveal-left" data-index="2">
           <div class="alt-timeline-dot"><div class="alt-dot-ring"></div></div>
           <div class="alt-timeline-card glass-card">
             <span class="alt-type-pill pill-training">Training</span>
@@ -455,20 +458,31 @@
         </h2>
         <p class="section-subtitle">Showcasing real-world AI applications</p>
       </div>
-      <div class="project-stack-container" id="project-stack">
-        <!-- PROJECT 1 -->
-        <div class="project-stack-card tint-navy reveal reveal-up">
-          <div class="mac-header">
-            <div class="mac-dots">
-              <span class="dot dot-red"></span>
-              <span class="dot dot-yellow"></span>
-              <span class="dot dot-green"></span>
+      <!-- Project Section Side Decorations -->
+      <div class="project-section-layout">
+
+        <!-- LEFT SIDE DECORATION -->
+        <div class="project-side-decor project-side-left" aria-hidden="true">
+          <div class="project-vert-line"></div>
+          <div class="project-number-indicator" data-index="0">01</div>
+          <div class="project-number-indicator" data-index="1">02</div>
+          <div class="project-number-indicator" data-index="2">03</div>
+        </div>
+
+        <!-- CARDS COLUMN -->
+        <div class="project-stack-container" id="project-stack">
+          <!-- PROJECT 1 -->
+          <div class="project-stack-card tint-navy reveal reveal-up" data-delay="0">
+            <div class="mac-header">
+              <div class="mac-dots">
+                <span class="dot dot-red"></span>
+                <span class="dot dot-yellow"></span>
+                <span class="dot dot-green"></span>
+              </div>
+              <div class="mac-title">Fake Social Media Account Detection</div>
+              <div class="mac-spacer"></div>
             </div>
-            <div class="mac-title">Fake Social Media Account Detection</div>
-            <div class="mac-spacer"></div>
-          </div>
-          <div class="project-split-layout">
-            <div class="project-split-left">
+            <div class="project-card-body">
               <h3 class="stack-project-title">Fake Social Media Account Detection</h3>
               <p class="stack-project-duration">Nov 2025 – Dec 2025</p>
               <ul class="stack-project-points">
@@ -490,36 +504,27 @@
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12"/></svg>
                   View on GitHub
                 </a>
-                <a href="#" class="btn btn-primary btn-glow">
-                  <span class="btn-shine"></span>
+                <a href="#" class="btn btn-live-demo">
+                  <span class="live-dot"></span>
                   Live Demo
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
                 </a>
               </div>
             </div>
-            <div class="project-split-right">
-              <div class="abstract-visual visual-network">
-                <!-- Abstract animated network visual -->
-                <div class="node n1"></div><div class="node n2"></div><div class="node n3"></div>
-                <svg class="network-lines" viewBox="0 0 100 100"><line x1="20" y1="30" x2="80" y2="70" stroke="rgba(6,182,212,0.4)" stroke-width="2"/><line x1="80" y1="70" x2="50" y2="90" stroke="rgba(124,58,237,0.4)" stroke-width="2"/><line x1="50" y1="90" x2="20" y2="30" stroke="rgba(6,182,212,0.4)" stroke-width="2"/></svg>
-              </div>
-            </div>
           </div>
-        </div>
 
-        <!-- PROJECT 2 -->
-        <div class="project-stack-card tint-purple reveal reveal-up" data-delay="100">
-          <div class="mac-header">
-            <div class="mac-dots">
-              <span class="dot dot-red"></span>
-              <span class="dot dot-yellow"></span>
-              <span class="dot dot-green"></span>
+          <!-- PROJECT 2 -->
+          <div class="project-stack-card tint-purple reveal reveal-up" data-delay="150">
+            <div class="mac-header">
+              <div class="mac-dots">
+                <span class="dot dot-red"></span>
+                <span class="dot dot-yellow"></span>
+                <span class="dot dot-green"></span>
+              </div>
+              <div class="mac-title">FWI Weather Predictor</div>
+              <div class="mac-spacer"></div>
             </div>
-            <div class="mac-title">FWI Weather Predictor</div>
-            <div class="mac-spacer"></div>
-          </div>
-          <div class="project-split-layout">
-            <div class="project-split-left">
+            <div class="project-card-body">
               <h3 class="stack-project-title">FWI Weather Predictor</h3>
               <p class="stack-project-duration">Aug 2025 – Oct 2025</p>
               <ul class="stack-project-points">
@@ -538,16 +543,54 @@
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12"/></svg>
                   View on GitHub
                 </a>
+                <a href="#" class="btn btn-live-demo">
+                  <span class="live-dot"></span>
+                  Live Demo
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
+                </a>
               </div>
             </div>
-            <div class="project-split-right">
-              <div class="abstract-visual visual-fire">
-                <!-- Abstract fire visual -->
-                <div class="flame f1"></div><div class="flame f2"></div><div class="flame f3"></div>
+          </div>
+
+          <!-- PROJECT 3 -->
+          <div class="project-stack-card tint-navy reveal reveal-up" data-delay="300">
+            <div class="mac-header">
+              <div class="mac-dots">
+                <span class="dot dot-red"></span>
+                <span class="dot dot-yellow"></span>
+                <span class="dot dot-green"></span>
+              </div>
+              <div class="mac-title">AI Gym Pro — Smart Fitness Platform</div>
+              <div class="mac-spacer"></div>
+            </div>
+            <div class="project-card-body">
+              <h3 class="stack-project-title">AI Gym Pro — Smart Fitness Platform</h3>
+              <p class="stack-project-duration">Sep 2025 – Dec 2025</p>
+              <ul class="stack-project-points">
+                <li>Developed intelligent backend APIs for smart fitness platform including workout logging, diet planning and chat assistant</li>
+                <li>Identified gaps in manual fitness planning and built personalized automation system</li>
+                <li>Applied AI/ML concepts to real-world health and fitness workflows</li>
+                <li>Improved system usability and personalization significantly</li>
+              </ul>
+              <div class="stack-project-tech">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">FastAPI</span>
+                <span class="tech-tag">PostgreSQL</span>
+                <span class="tech-tag">SQLite</span>
+                <span class="tech-tag">HTML</span>
+                <span class="tech-tag">CSS</span>
+                <span class="tech-tag">JavaScript</span>
+              </div>
+              <div class="stack-project-buttons">
+                <a href="#" class="btn btn-secondary">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12"/></svg>
+                  View on GitHub
+                </a>
               </div>
             </div>
           </div>
         </div>
+
       </div>
     </div>
   </section>
@@ -609,17 +652,109 @@
         </h2>
         <p class="section-subtitle">Academic journey and qualifications</p>
       </div>
-      <div class="education-grid reveal reveal-up">
-        <div class="edu-card glass-card">
-          <div class="edu-icon-wrap">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none"><path d="M22 10v6M2 10l10-5 10 5-10 5z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M6 12v5c3 3 9 3 12 0v-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <div class="education-container">
+        <!-- Floating Background Icons -->
+        <div class="edu-float-icons" aria-hidden="true">
+          <div class="edu-float-icon" style="--delay: 0s; --offset: 10%;">🎓</div>
+          <div class="edu-float-icon" style="--delay: 4s; --offset: 30%;">📚</div>
+          <div class="edu-float-icon" style="--delay: 2s; --offset: 60%;">🏫</div>
+          <div class="edu-float-icon" style="--delay: 6s; --offset: 85%;">✏️</div>
+        </div>
+
+        <!-- Glowing Vertical Timeline Line -->
+        <div class="edu-timeline-line" id="edu-timeline-line"></div>
+
+        <div class="education-grid">
+          <!-- CARD 1: B.Tech -->
+          <div class="edu-timeline-item reveal reveal-right" data-delay="0">
+            <div class="edu-timeline-dot dot-cyan"></div>
+            <div class="edu-card glass-card hover-lift hover-glow-cyan">
+              <div class="edu-card-content">
+                <div class="edu-icon-box box-cyan">
+                  <span class="edu-emoji">🎓</span>
+                </div>
+                <div class="edu-info">
+                  <div class="edu-header-row">
+                    <span class="edu-duration glow-cyan">2023 — Present</span>
+                    <span class="edu-status status-active">
+                      <span class="status-dot"></span> Currently Pursuing
+                    </span>
+                  </div>
+                  <h3 class="edu-degree">Bachelor of Technology</h3>
+                  <div class="edu-stream">Computer Science & Engineering</div>
+                  <div class="edu-institution">Lovely Professional University</div>
+                  <div class="edu-location">Punjab, India</div>
+                  
+                  <div class="edu-grade-row">
+                    <span class="edu-grade-badge">
+                      <span class="shimmer-effect"></span>
+                      CGPA: 7.25
+                    </span>
+                  </div>
+                  
+                  <p class="edu-description">Focused on AI/ML, Data Structures and Software Engineering</p>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="edu-info">
-            <div class="edu-date glass-card-mini">2022 — 2026</div>
-            <h3 class="edu-degree">Bachelor of Technology</h3>
-            <p class="edu-school">Computer Science & Engineering</p>
-            <p class="edu-details">Focused on AI/ML, Data Structures, and Software Engineering</p>
+
+          <!-- CARD 2: 12th -->
+          <div class="edu-timeline-item reveal reveal-right" data-delay="200">
+            <div class="edu-timeline-dot dot-purple"></div>
+            <div class="edu-card glass-card hover-lift hover-glow-purple">
+              <div class="edu-card-content">
+                <div class="edu-icon-box box-purple">
+                  <span class="edu-emoji">🏫</span>
+                </div>
+                <div class="edu-info">
+                  <div class="edu-header-row">
+                    <span class="edu-duration glow-purple">2022 — 2023</span>
+                    <span class="edu-status status-completed">✓ Completed</span>
+                  </div>
+                  <h3 class="edu-degree">Intermediate (12th)</h3>
+                  <div class="edu-stream">Science</div>
+                  <div class="edu-institution">Shiv Jyoti Public School</div>
+                  <div class="edu-location">Jalandhar, Punjab</div>
+                  
+                  <div class="edu-grade-row">
+                    <span class="edu-grade-badge">
+                      <span class="shimmer-effect"></span>
+                      77%
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
+
+          <!-- CARD 3: 10th -->
+          <div class="edu-timeline-item reveal reveal-right" data-delay="400">
+            <div class="edu-timeline-dot dot-blue"></div>
+            <div class="edu-card glass-card hover-lift hover-glow-blue">
+              <div class="edu-card-content">
+                <div class="edu-icon-box box-blue">
+                  <span class="edu-emoji">📚</span>
+                </div>
+                <div class="edu-info">
+                  <div class="edu-header-row">
+                    <span class="edu-duration glow-blue">2020 — 2021</span>
+                    <span class="edu-status status-completed">✓ Completed</span>
+                  </div>
+                  <h3 class="edu-degree">Matriculation (10th)</h3>
+                  <div class="edu-institution">St. Francis Convent School</div>
+                  <div class="edu-location">Kartarpur, Punjab</div>
+                  
+                  <div class="edu-grade-row">
+                    <span class="edu-grade-badge">
+                      <span class="shimmer-effect"></span>
+                      91.8%
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     </div>
@@ -629,9 +764,6 @@
   <section id="contact" class="section">
     <div class="section-decor contact-decor" aria-hidden="true">
       <div class="mesh-gradient"></div>
-      <div class="float-emoji e1">🚀</div>
-      <div class="float-emoji e2">💡</div>
-      <div class="float-emoji e3">⚡</div>
     </div>
     <div class="container">
       <div class="section-header reveal reveal-up">
@@ -643,48 +775,50 @@
         </h2>
         <p class="section-subtitle">Got a project? Let's build something amazing together</p>
       </div>
-      <div class="contact-wrapper reveal reveal-up">
-        <div class="glass-card contact-card">
-          <div class="contact-card-glow" aria-hidden="true"></div>
-          <div class="contact-info-row">
-            <div class="contact-info-item">
-              <div class="contact-info-icon glass-card-mini">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><polyline points="22,6 12,13 2,6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </div>
-              <span>yuvikamalhotra@gmail.com</span>
-            </div>
-            <div class="contact-info-item">
-              <div class="contact-info-icon glass-card-mini">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 5.03 7.03 1 12 1C16.97 1 21 5.03 21 10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2"/></svg>
-              </div>
-              <span>India</span>
-            </div>
-          </div>
-          <form id="contact-form" class="contact-form">
-            <div class="form-row">
-              <div class="form-group">
-                <label for="form-name">Name</label>
+      <div class="contact-layout reveal reveal-up">
+        
+        <!-- LEFT COLUMN: Contact Form (50%) -->
+        <div class="contact-form-col">
+          <!-- Compact Contact Form -->
+          <div class="glass-card contact-card dark-form-card">
+            <div class="contact-card-glow" aria-hidden="true"></div>
+            <form id="contact-form" class="contact-form">
+              <div class="form-group stack-group">
+                <label for="form-name">Your Name</label>
                 <input type="text" id="form-name" placeholder="Your name" required />
                 <div class="input-glow"></div>
               </div>
-              <div class="form-group">
-                <label for="form-email">Email</label>
-                <input type="email" id="form-email" placeholder="you@example.com" required />
+              <div class="form-group stack-group">
+                <label for="form-email">Your Email</label>
+                <input type="email" id="form-email" placeholder="your@email.com" required />
                 <div class="input-glow"></div>
               </div>
-            </div>
-            <div class="form-group">
-              <label for="form-message">Message</label>
-              <textarea id="form-message" placeholder="Tell me about your project..." rows="5" required></textarea>
-              <div class="input-glow"></div>
-            </div>
-            <button type="submit" class="btn btn-primary btn-glow btn-full">
-              <span class="btn-shine"></span>
-              Send Message
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M22 2L11 13M22 2L15 22L11 13M22 2L2 9L11 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </button>
-          </form>
+              <div class="form-group stack-group">
+                <label for="form-message">Your Message</label>
+                <textarea id="form-message" placeholder="Tell me about your project..." rows="4" required></textarea>
+                <div class="input-glow"></div>
+              </div>
+              <button type="submit" class="btn btn-multicolor btn-full">
+                <span class="btn-shine"></span>
+                Send Message
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M22 2L11 13M22 2L15 22L11 13M22 2L2 9L11 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+            </form>
+          </div>
         </div>
+
+        <!-- RIGHT COLUMN: Spline Scene (50%) -->
+        <div class="contact-spline-col">
+          <div class="spline-float-wrapper">
+            <div class="spline-crop">
+              <spline-viewer 
+                url="https://prod.spline.design/WefsCruhQggaB2b3/scene.splinecode"
+                style="mix-blend-mode: lighten; display: block;">
+              </spline-viewer>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
@@ -695,7 +829,7 @@
     <div class="container">
       <div class="footer-inner">
         <div class="footer-logo">
-          <span class="logo-bracket">&lt;</span>yogender<span class="logo-slash">/</span><span class="logo-bracket">&gt;</span>
+          <span class="logo-bracket">&lt;</span>Yuvika Malhotra<span class="logo-slash">/</span><span class="logo-bracket">&gt;</span>
         </div>
         <div class="footer-socials">
           <a href="https://github.com" target="_blank" rel="noopener" class="social-link" aria-label="GitHub">
@@ -751,6 +885,8 @@
   <script src="js/certificates.js"></script>
   <script src="js/globe.js"></script>
   <script src="js/timeline.js"></script>
+  <script src="js/education-timeline.js"></script>
+  <script src="js/project-stack.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>
