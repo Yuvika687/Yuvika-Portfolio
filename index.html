@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yuvika Malhotra — Portfolio</title>
+  <meta name="description" content="Portfolio of Yuvika Malhotra — showcasing skills, projects, and experience." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <!-- CDN for 3D Globe -->
+  <script src="https://cdn.jsdelivr.net/npm/cobe"></script>
+  <!-- Spline Viewer -->
+  <script type="module" src="https://unpkg.com/@splinetool/viewer@1.12.70/build/spline-viewer.js"></script>
+</head>
+<body>
+
+  <!-- ========== PRELOADER ========== -->
+  <div id="preloader">
+    <div class="preloader-inner">
+      <div class="preloader-ring">
+        <div class="preloader-ring-inner"></div>
+      </div>
+      <div class="preloader-text">YUVIKA MALHOTRA</div>
+      <div class="preloader-bar-track">
+        <div class="preloader-bar-fill" id="preloader-fill"></div>
+      </div>
+      <div class="preloader-percent" id="preloader-percent">0%</div>
+    </div>
+  </div>
+
+  <!-- ========== CUSTOM CURSOR ========== -->
+  <div id="cursor-container" aria-hidden="true"></div>
+
+  <!-- ========== STAR FIELD CANVAS (refined from space-portfolio) ========== -->
+  <canvas id="star-canvas" aria-hidden="true"></canvas>
+
+  <!-- ========== PARTICLE CANVAS ========== -->
+  <canvas id="particle-canvas" aria-hidden="true"></canvas>
+
+  <!-- ========== NAVIGATION ========== -->
+  <nav id="navbar" class="glass-nav">
+    <div class="nav-pill">
+      <div class="nav-inner">
+        <a href="#hero" class="nav-logo">
+          <span class="logo-bracket">&lt;</span>Yuvika Malhotra<span class="logo-slash">/</span><span class="logo-bracket">&gt;</span>
+        </a>
+        <ul class="nav-links">
+          <li><a href="#about" class="nav-link" data-text="About">About</a></li>
+          <li><a href="#skills" class="nav-link" data-text="Skills">Skills</a></li>
+          <li><a href="#experience" class="nav-link" data-text="Experience">Experience</a></li>
+          <li><a href="#projects" class="nav-link" data-text="Projects">Projects</a></li>
+          <li><a href="#credentials" class="nav-link" data-text="Impact">Impact</a></li>
+          <li><a href="#education" class="nav-link" data-text="Education">Education</a></li>
+        </ul>
+        <a href="#contact" class="nav-contact-btn">Contact</a>
+        <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <div class="mobile-menu" id="mobile-menu">
+      <a href="#about" class="mobile-link">About</a>
+      <a href="#skills" class="mobile-link">Skills</a>
+      <a href="#experience" class="mobile-link">Experience</a>
+      <a href="#projects" class="mobile-link">Projects</a>
+      <a href="#credentials" class="mobile-link">Impact</a>
+      <a href="#education" class="mobile-link">Education</a>
+      <a href="#contact" class="mobile-link">Contact</a>
+    </div>
+  </nav>
+
+  <!-- ========== HERO SECTION ========== -->
+  <section id="hero" class="section hero-section">
+    <!-- Black hole video background (from space-portfolio) -->
+    <video autoplay muted loop class="hero-blackhole-video" aria-hidden="true">
+      <source src="assets/blackhole.webm" type="video/webm" />
+    </video>
+    <!-- Animated gradient orbs -->
+    <div class="hero-orbs" aria-hidden="true">
+      <div class="orb orb-1"></div>
+      <div class="orb orb-2"></div>
+      <div class="orb orb-3"></div>
+      <div class="orb orb-4"></div>
+    </div>
+    <!-- Animated grid lines -->
+    <div class="hero-grid-bg" aria-hidden="true"></div>
+    <!-- Parallax layers -->
+    <div class="hero-bg-layers" id="parallax-container">
+      <div class="parallax-layer" data-speed="0.1"></div>
+      <div class="parallax-layer" data-speed="0.3"></div>
+      <div class="parallax-layer" data-speed="0.5"></div>
+    </div>
+
+    <div class="hero-content">
+      <div class="hero-left reveal reveal-left">
+        <!-- Sparkle badge -->
+        <div class="hero-badge glass-card-mini">
+          <span class="badge-pulse"></span>
+          <span class="badge-icon">✦</span>
+          <span>Available for work</span>
+        </div>
+        <h1 class="hero-name-large">
+          <span class="hero-line line-1">Hi, I'm</span>
+          <span class="hero-line line-2 gradient-text">Yuvika Malhotra</span>
+        </h1>
+        <div class="hero-role-wrapper">
+          <span class="hero-role-label">I am a</span>
+          <div class="hero-typewriter-container">
+            <span id="hero-typewriter" class="hero-typewriter-text"></span>
+            <span class="hero-typewriter-cursor">|</span>
+          </div>
+        </div>
+        <p class="hero-desc">I design and develop intelligent, user-focused applications that combine creativity with technology. From AI-powered systems to full-stack web solutions, I love building experiences that make an impact.</p>
+        <div class="hero-buttons">
+          <a href="#projects" class="btn btn-primary btn-glow">
+            <span class="btn-shine"></span>
+            <span class="btn-icon">//</span> View My Work
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="#contact" class="btn btn-secondary">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 4V16M12 16L7 11M12 16L17 11M4 20H20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Resume
+          </a>
+
+      <div class="hero-right reveal reveal-right">
+        <div class="hero-visual">
+          <!-- Orbiting rings -->
+          <div class="orbit-container" aria-hidden="true">
+            <div class="orbit orbit-1"><div class="orbit-dot"></div></div>
+            <div class="orbit orbit-2"><div class="orbit-dot"></div></div>
+            <div class="orbit orbit-3"><div class="orbit-dot"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-indicator" id="scroll-indicator">
+      <div class="scroll-mouse"><div class="scroll-dot"></div></div>
+      <span>Scroll Down</span>
+    </div>
+  </section>
+
+  <!-- ========== ABOUT SECTION ========== -->
+  <section id="about" class="section">
+    <!-- Section-specific floating elements -->
+    <div class="section-decor about-decor" aria-hidden="true">
+      <div class="float-shape shape-1">◆</div>
+      <div class="float-shape shape-2">⬡</div>
+      <div class="float-shape shape-3">△</div>
+      <div class="gradient-line-h"></div>
+    </div>
+    <div class="container">
+      <div class="about-layout reveal reveal-up">
+        <!-- Left: Avatar with animated ring -->
+        <div class="about-avatar-col">
+          <div class="about-avatar-wrapper">
+            <div class="about-avatar-ring"></div>
+            <div class="about-avatar-ring ring-2"></div>
+            <img src="assets/avatar.png" alt="Yuvika Malhotra" class="about-avatar-img" />
+          </div>
+          <div class="about-avatar-badges">
+            <span class="about-info-badge glass-card-mini"><span class="badge-pulse"></span> 🎓 B.Tech CSE — LPU</span>
+            <span class="about-info-badge glass-card-mini">📍 Punjab, India</span>
+          </div>
+        </div>
+        <!-- Right: Heading + Bio -->
+        <div class="about-text-col">
+          <span class="section-tag glass-card-mini">
+            <span class="tag-dot"></span> 01. Introduction
+          </span>
+          <h2 class="about-heading">
+            Turning Data Into<br/>
+            <span class="typewriter-wrapper">
+              <span class="gradient-text typewriter-text">Intelligent Solutions</span>
+            </span>
+          </h2>
+          <p class="about-bio">I'm <strong>Yuvika Malhotra</strong>, an aspiring <strong>AI/ML Engineer</strong> with hands-on experience in building and deploying intelligent systems. From <strong>machine learning pipelines</strong> to FastAPI backends, I turn complex data into real-world solutions. I actively contribute to <strong>open-source</strong> while pursuing my B.Tech in Computer Science at LPU, Punjab.</p>
+          
+          <!-- Counters Grid -->
+          <div class="about-counters-row">
+            <div class="counter-card glass-card tilt-card reveal reveal-scale" data-delay="0" data-target="2" data-suffix="+">
+              <div class="counter-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M16 18L22 12L16 6M8 6L2 12L8 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <span class="counter-value">0</span><span class="counter-suffix">+</span>
+              <span class="counter-label">Internships</span>
+            </div>
+            <div class="counter-card glass-card tilt-card reveal reveal-scale" data-delay="100" data-target="9" data-suffix="+">
+              <div class="counter-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <span class="counter-value">0</span><span class="counter-suffix">+</span>
+              <span class="counter-label">Projects Deployed</span>
+            </div>
+            <div class="counter-card glass-card tilt-card reveal reveal-scale" data-delay="200" data-target="18" data-suffix="+">
+              <div class="counter-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M4 7V4C4 3.45 4.45 3 5 3H9L11 5H19C19.55 5 20 5.45 20 6V18C20 18.55 19.55 19 19 19H14M2 15V11C2 10.45 2.45 10 3 10H7L9 12H14C14.55 12 15 12.45 15 13V19C15 19.55 14.55 20 14 20H3C2.45 20 2 19.55 2 19V15Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <span class="counter-value">0</span><span class="counter-suffix">+</span>
+              <span class="counter-label">Certifications</span>
+            </div>
+            <div class="counter-card glass-card tilt-card reveal reveal-scale" data-delay="300" data-target="2" data-suffix="+">
+              <div class="counter-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" stroke="currentColor" stroke-width="2"/></svg></div>
+              <span class="counter-value">0</span><span class="counter-suffix">+</span>
+              <span class="counter-label">Open Source</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- 3D Globe -->
+      <div class="globe-container reveal reveal-up">
+        <canvas id="globe-canvas"></canvas>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SKILLS SECTION ========== -->
+  <section id="skills" class="section">
+    <div class="container">
+      <div class="section-header reveal reveal-up">
+        <span class="section-tag glass-card-mini">
+          <span class="tag-dot"></span> 02. Expertise
+        </span>
+        <h2 class="section-title">
+          Skills &amp; <span class="gradient-text">Technologies</span>
+        </h2>
+        <p class="section-subtitle">Technologies I use to bring ideas to lif      <!-- Infinite Scrolling Tech Marquee -->
+      <div class="tech-marquee-wrapper">
+        <div class="tech-marquee-track" id="tech-marquee">
+          <!-- Duplicate contents for seamless looping -->
+          <div class="tech-card glass-card-mini reveal reveal-left" data-delay="0">
+            <span class="tech-icon">🐍</span> <span class="tech-name">Python</span>
+          </div>
+          <div class="tech-card glass-card-mini reveal reveal-right" data-delay="100">
+            <span class="tech-icon">🔥</span> <span class="tech-name">PyTorch</span>
+          </div>
+          <div class="tech-card glass-card-mini reveal reveal-left" data-delay="200">
+            <span class="tech-icon">🧠</span> <span class="tech-name">TensorFlow</span>
+          </div>
+          <div class="tech-card glass-card-mini reveal reveal-right" data-delay="300">
+            <span class="tech-icon">🌙</span> <span class="tech-name">Scikit-learn</span>
+          </div>
+          <div class="tech-card glass-card-mini reveal reveal-left" data-delay="400">
+            <span class="tech-icon">🤗</span> <span class="tech-name">HuggingFace</span>
+          </div>
+          <div class="tech-card glass-card-mini reveal reveal-right" data-delay="500">
+            <span class="tech-icon">&lt;/&gt;</span> <span class="tech-name">HTML & CSS</span>
+          </div>
+          <div class="tech-card glass-card-mini reveal reveal-left" data-delay="600">
+            <span class="tech-icon">⚡</span> <span class="tech-name">FastAPI</span>
+          </div>
+          <div class="tech-card glass-card-mini reveal reveal-right" data-delay="700">
+            <span class="tech-icon">👑</span> <span class="tech-name">Streamlit</span>
+          </div>
+          <div class="tech-card glass-card-mini reveal reveal-left" data-delay="800">
+            <span class="tech-icon">🐳</span> <span class="tech-name">Docker</span>
+          </div>
+          <div class="tech-card glass-card-mini reveal reveal-right" data-delay="900">
+            <span class="tech-icon">☁️</span> <span class="tech-name">AWS</span>
+          </div>
+          <div class="tech-card glass-card-mini reveal reveal-left" data-delay="1000">
+            <span class="tech-icon">⚙️</span> <span class="tech-name">MLOps</span>
+          </div>
+          <div class="tech-card glass-card-mini reveal reveal-right" data-delay="1100">
+            <span class="tech-icon">⚛️</span> <span class="tech-name">React</span>
+          </div>
+          <div class="tech-card glass-card-mini reveal reveal-left" data-delay="1200">
+            <span class="tech-icon">📝</span> <span class="tech-name">NLP</span>
+          </div>
+
+          <!-- Duplicated list -->
+          <div class="tech-card glass-card-mini reveal reveal-right" data-delay="0">
+            <span class="tech-icon">🐍</span> <span class="tech-name">Python</span>
+          </div>
+          <div class="tech-card glass-card-mini reveal reveal-left" data-delay="100">
+            <span class="tech-icon">🔥</span> <span class="tech-name">PyTorch</span>
+          </div>
+          <div class="tech-card glass-card-mini reveal reveal-right" data-delay="200">
+            <span class="tech-icon">🧠</span> <span class="tech-name">TensorFlow</span>
+          </div>
+          <div class="tech-card glass-card-mini reveal reveal-left" data-delay="300">
+            <span class="tech-icon">🌙</span> <span class="tech-name">Scikit-learn</span>
+          </div>
+          <div class="tech-card glass-card-mini reveal reveal-right" data-delay="400">
+            <span class="tech-icon">🤗</span> <span class="tech-name">HuggingFace</span>
+          </div>
+          <div class="tech-card glass-card-mini reveal reveal-left" data-delay="500">
+            <span class="tech-icon">&lt;/&gt;</span> <span class="tech-name">HTML & CSS</span>
+          </div>
+          <div class="tech-card glass-card-mini reveal reveal-right" data-delay="600">
+            <span class="tech-icon">⚡</span> <span class="tech-name">FastAPI</span>
+          </div>
+          <div class="tech-card glass-card-mini reveal reveal-left" data-delay="700">
+            <span class="tech-icon">👑</span> <span class="tech-name">Streamlit</span>
+          </div>
+          <div class="tech-card glass-card-mini reveal reveal-right" data-delay="800">
+            <span class="tech-icon">🐳</span> <span class="tech-name">Docker</span>
+          </div>
+          <div class="tech-card glass-card-mini reveal reveal-left" data-delay="900">
+            <span class="tech-icon">☁️</span> <span class="tech-name">AWS</span>
+          </div>
+          <div class="tech-card glass-card-mini reveal reveal-right" data-delay="1000">
+            <span class="tech-icon">⚙️</span> <span class="tech-name">MLOps</span>
+          </div>
+          <div class="tech-card glass-card-mini reveal reveal-left" data-delay="1100">
+            <span class="tech-icon">⚛️</span> <span class="tech-name">React</span>
+          </div>
+          <div class="tech-card glass-card-mini reveal reveal-right" data-delay="1200">
+            <span class="tech-icon">📝</span> <span class="tech-name">NLP</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- ========== EXPERIENCE SECTION ========== -->
+  <section id="experience" class="section">
+    <div class="container">
+      <div class="section-header reveal reveal-up">
+        <span class="section-tag glass-card-mini">
+          <span class="tag-dot"></span> 03. Experience
+        </span>
+        <h2 class="section-title">
+          Work &amp; <span class="gradient-text">Experience</span>
+        </h2>
+        <p class="section-subtitle">Building expertise one project at a time</p>
+      </div>
+
+      <!-- Alternating Timeline -->
+      <div class="alt-timeline" id="alt-timeline">
+        <!-- Scroll-driven line -->
+        <div class="alt-timeline-line">
+          <div class="alt-timeline-line-progress" id="timeline-progress"></div>
+        </div>
+
+        <!-- Card 1 — LEFT -->
+        <div class="alt-timeline-item alt-left reveal reveal-left" data-index="0">
+          <div class="alt-timeline-dot"><div class="alt-dot-ring"></div></div>
+          <div class="alt-timeline-card glass-card">
+            <span class="alt-type-pill pill-internship">Internship</span>
+            <h3 class="alt-card-role">AI/ML Intern</h3>
+            <p class="alt-card-company">Unlox Academy</p>
+            <p class="alt-card-duration">Sep 2025 – Dec 2025</p>
+            <ul class="alt-card-points">
+              <li>Identified gaps in manual fitness planning lacking personalization and automation</li>
+              <li>Developed backend APIs for AI Gym Pro system (workout logging, diet planning, chat assistant)</li>
+              <li>Applied AI/ML concepts to real-world workflows</li>
+            </ul>
+            <div class="alt-card-tags">
+              <span>Python</span><span>FastAPI</span><span>PostgreSQL</span><span>SQLite</span><span>HTML</span><span>CSS</span><span>JavaScript</span>
+            </div>
+            <a href="Certificates/Yuvika Malhotra_Internship_Certificate (1).png" target="_blank" class="alt-cert-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><polyline points="14 2 14 8 20 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              View Certificate
+            </a>
+          </div>
+          
+          <!-- Mini Chips 1 -->
+          <div class="alt-timeline-chips reveal reveal-up">
+            <div class="mini-chip">
+              <span class="chip-icon">⚡</span>
+              <span class="chip-text">4 Months</span>
+            </div>
+            <div class="mini-chip">
+              <span class="chip-icon">📦</span>
+              <span class="chip-text">1 Platform Built</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2 — RIGHT -->
+        <div class="alt-timeline-item alt-right reveal reveal-right" data-index="1">
+          <div class="alt-timeline-dot"><div class="alt-dot-ring"></div></div>
+          <div class="alt-timeline-card glass-card">
+            <span class="alt-type-pill pill-internship">Internship</span>
+            <h3 class="alt-card-role">Intern</h3>
+            <p class="alt-card-company">Infosys Springboard 6.0</p>
+            <p class="alt-card-duration">Aug 2025 – Oct 2025</p>
+            <ul class="alt-card-points">
+              <li>Studied core AI/ML concepts including data preprocessing, feature engineering, model evaluation</li>
+              <li>Developed Fire Weather Index prediction system using meteorological datasets and regression modeling</li>
+              <li>Built web interface for real-time fire-risk visualization and decision support</li>
+            </ul>
+            <div class="alt-card-tags">
+              <span>Python</span><span>Pandas</span><span>NumPy</span><span>Scikit-Learn</span><span>PCA</span><span>Ridge Regression</span><span>Flask</span><span>HTML/CSS</span>
+            </div>
+            <a href="Certificates/Yuvika Malhotra_Infosys Internship.png" target="_blank" class="alt-cert-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><polyline points="14 2 14 8 20 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              View Certificate
+            </a>
+          </div>
+
+          <!-- Mini Chips 2 -->
+          <div class="alt-timeline-chips reveal reveal-up">
+            <div class="mini-chip">
+              <span class="chip-icon">⚡</span>
+              <span class="chip-text">3 Months</span>
+            </div>
+            <div class="mini-chip">
+              <span class="chip-icon">📦</span>
+              <span class="chip-text">2 Projects Shipped</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3 — LEFT -->
+        <div class="alt-timeline-item alt-left reveal reveal-left" data-index="2">
+          <div class="alt-timeline-dot"><div class="alt-dot-ring"></div></div>
+          <div class="alt-timeline-card glass-card">
+            <span class="alt-type-pill pill-training">Training</span>
+            <h3 class="alt-card-role">AI Trainee</h3>
+            <p class="alt-card-company">Unlox Academy</p>
+            <p class="alt-card-duration">Sep 2025 – Dec 2025</p>
+            <ul class="alt-card-points">
+              <li>Learned Python-based data handling, ML fundamentals, and workflow design</li>
+              <li>Applied AI concepts while working on AI Gym Pro smart fitness platform</li>
+              <li>Strengthened problem-solving and system design skills through project-based learning</li>
+            </ul>
+            <div class="alt-card-tags">
+              <span>Python</span><span>NumPy</span><span>Pandas</span><span>Matplotlib</span><span>Scikit-Learn</span>
+            </div>
+            <a href="Certificates/Unstop_updated.png" target="_blank" class="alt-cert-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><polyline points="14 2 14 8 20 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              View Certificate
+            </a>
+          </div>
+
+          <!-- Mini Chips 3 -->
+          <div class="alt-timeline-chips reveal reveal-up">
+            <div class="mini-chip">
+              <span class="chip-icon">⚡</span>
+              <span class="chip-text">2 Months</span>
+            </div>
+            <div class="mini-chip">
+              <span class="chip-icon">💡</span>
+              <span class="chip-text">1 System Designed</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PROJECTS SECTION ========== -->
+  <section id="projects" class="section">
+    <div class="section-decor projects-decor" aria-hidden="true">
+      <div class="corner-accent top-left"></div>
+      <div class="corner-accent top-right"></div>
+      <div class="corner-accent bottom-left"></div>
+      <div class="corner-accent bottom-right"></div>
+      <div class="gradient-sphere sphere-1"></div>
+      <div class="gradient-sphere sphere-2"></div>
+    </div>
+    <div class="container">
+      <div class="section-header reveal reveal-up">
+        <span class="section-tag glass-card-mini">
+          <span class="tag-dot"></span> 04. Projects
+        </span>
+        <h2 class="section-title">
+          My <span class="gradient-text">Projects</span>
+        </h2>
+        <p class="section-subtitle">Showcasing real-world AI applications</p>
+      </div>
+      <!-- Project Section Side Decorations -->
+      <div class="project-section-layout">
+
+        <!-- LEFT SIDE DECORATION -->
+        <div class="project-side-decor project-side-left" aria-hidden="true">
+          <div class="project-vert-line"></div>
+          <div class="project-number-indicator" data-index="0">01</div>
+          <div class="project-number-indicator" data-index="1">02</div>
+          <div class="project-number-indicator" data-index="2">03</div>
+        </div>
+
+        <!-- CARDS COLUMN -->
+        <div class="project-stack-container" id="project-stack">
+          <!-- PROJECT 1 -->
+          <div class="project-stack-card tint-navy reveal reveal-up" data-delay="0">
+            <div class="mac-header">
+              <div class="mac-dots">
+                <span class="dot dot-red"></span>
+                <span class="dot dot-yellow"></span>
+                <span class="dot dot-green"></span>
+              </div>
+              <div class="mac-title">Fake Social Media Account Detection</div>
+              <div class="mac-spacer"></div>
+            </div>
+            <div class="project-card-body">
+              <h3 class="stack-project-title">Fake Social Media Account Detection</h3>
+              <p class="stack-project-duration">Nov 2025 – Dec 2025</p>
+              <ul class="stack-project-points">
+                <li>Built end-to-end ML system to detect fake and bot Twitter accounts using behavioral and profile-based features</li>
+                <li>Engineered 33+ features and compared XGBoost, LightGBM, CatBoost, Random Forest</li>
+                <li>Achieved AUC of 0.946 (XGBoost) and 0.921 (ensemble)</li>
+                <li>Deployed real-time inference via FastAPI with Streamlit dashboard</li>
+              </ul>
+              <div class="stack-project-tech">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">XGBoost</span>
+                <span class="tech-tag">LightGBM</span>
+                <span class="tech-tag">CatBoost</span>
+                <span class="tech-tag">FastAPI</span>
+                <span class="tech-tag">Streamlit</span>
+              </div>
+              <div class="stack-project-buttons">
+                <a href="#" class="btn btn-secondary">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12"/></svg>
+                  View on GitHub
+                </a>
+                <a href="#" class="btn btn-live-demo">
+                  <span class="live-dot"></span>
+                  Live Demo
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- PROJECT 2 -->
+          <div class="project-stack-card tint-purple reveal reveal-up" data-delay="150">
+            <div class="mac-header">
+              <div class="mac-dots">
+                <span class="dot dot-red"></span>
+                <span class="dot dot-yellow"></span>
+                <span class="dot dot-green"></span>
+              </div>
+              <div class="mac-title">FWI Weather Predictor</div>
+              <div class="mac-spacer"></div>
+            </div>
+            <div class="project-card-body">
+              <h3 class="stack-project-title">FWI Weather Predictor</h3>
+              <p class="stack-project-duration">Aug 2025 – Oct 2025</p>
+              <ul class="stack-project-points">
+                <li>Built ML pipeline to predict Forest Fire Weather Index using meteorological data</li>
+                <li>Performed EDA, outlier handling and feature transformation</li>
+                <li>Validated predictions through residual analysis and performance evaluation</li>
+              </ul>
+              <div class="stack-project-tech">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">Pandas</span>
+                <span class="tech-tag">NumPy</span>
+                <span class="tech-tag">Scikit-Learn</span>
+              </div>
+              <div class="stack-project-buttons">
+                <a href="#" class="btn btn-secondary">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12"/></svg>
+                  View on GitHub
+                </a>
+                <a href="#" class="btn btn-live-demo">
+                  <span class="live-dot"></span>
+                  Live Demo
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- PROJECT 3 -->
+          <div class="project-stack-card tint-navy reveal reveal-up" data-delay="300">
+            <div class="mac-header">
+              <div class="mac-dots">
+                <span class="dot dot-red"></span>
+                <span class="dot dot-yellow"></span>
+                <span class="dot dot-green"></span>
+              </div>
+              <div class="mac-title">AI Gym Pro — Smart Fitness Platform</div>
+              <div class="mac-spacer"></div>
+            </div>
+            <div class="project-card-body">
+              <h3 class="stack-project-title">AI Gym Pro — Smart Fitness Platform</h3>
+              <p class="stack-project-duration">Sep 2025 – Dec 2025</p>
+              <ul class="stack-project-points">
+                <li>Developed intelligent backend APIs for smart fitness platform including workout logging, diet planning and chat assistant</li>
+                <li>Identified gaps in manual fitness planning and built personalized automation system</li>
+                <li>Applied AI/ML concepts to real-world health and fitness workflows</li>
+                <li>Improved system usability and personalization significantly</li>
+              </ul>
+              <div class="stack-project-tech">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">FastAPI</span>
+                <span class="tech-tag">PostgreSQL</span>
+                <span class="tech-tag">SQLite</span>
+                <span class="tech-tag">HTML</span>
+                <span class="tech-tag">CSS</span>
+                <span class="tech-tag">JavaScript</span>
+              </div>
+              <div class="stack-project-buttons">
+                <a href="#" class="btn btn-secondary">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12"/></svg>
+                  View on GitHub
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CREDENTIALS SECTION (Certificates + Badges) ========== -->
+  <section id="credentials" class="section">
+    <div class="section-decor credentials-decor" aria-hidden="true">
+      <div class="gradient-sphere sphere-3"></div>
+      <div class="gradient-sphere sphere-4"></div>
+    </div>
+    <div class="container">
+      <div class="section-header reveal reveal-up">
+        <span class="section-tag glass-card-mini">
+          <span class="tag-dot"></span> 05. Credentials
+        </span>
+        <h2 class="section-title">
+          Industry <span class="gradient-text">Certifications</span>
+        </h2>
+        <p class="section-subtitle">Professional certifications and skill badges</p>
+      </div>
+
+      <!-- Certificate Carousel -->
+      <div class="cert-carousel-wrapper reveal reveal-up">
+        <div class="cert-carousel" id="cert-carousel">
+          <!-- Certificates loaded dynamically by certificates.js -->
+        </div>
+        <div class="cert-carousel-hint">Auto-scrolling · Hover to pause · Click to view</div>
+      </div>
+
+      <!-- Badges Grid -->
+      <div class="section-header badges-subheader reveal reveal-up">
+        <span class="section-tag glass-card-mini">
+          <span class="tag-dot"></span> 06. Achievements
+        </span>
+        <h2 class="section-title">
+          Skill <span class="gradient-text">Badges</span>
+        </h2>
+      </div>
+      <div class="badges-marquee-wrapper reveal reveal-up">
+        <div class="badges-marquee-track" id="badges-grid">
+          <!-- Badges loaded dynamically by certificates.js -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== EDUCATION SECTION ========== -->
+  <section id="education" class="section">
+    <div class="section-decor edu-decor" aria-hidden="true">
+      <div class="vertical-beam"></div>
+    </div>
+    <div class="container">
+      <div class="section-header reveal reveal-up">
+        <span class="section-tag glass-card-mini">
+          <span class="tag-dot"></span> 07. Education
+        </span>
+        <h2 class="section-title">
+          My <span class="gradient-text">Education</span>
+        </h2>
+        <p class="section-subtitle">Academic journey and qualifications</p>
+      </div>
+      <div class="education-container">
+        <!-- Floating Background Icons -->
+        <div class="edu-float-icons" aria-hidden="true">
+          <div class="edu-float-icon" style="--delay: 0s; --offset: 10%;">🎓</div>
+          <div class="edu-float-icon" style="--delay: 4s; --offset: 30%;">📚</div>
+          <div class="edu-float-icon" style="--delay: 2s; --offset: 60%;">🏫</div>
+          <div class="edu-float-icon" style="--delay: 6s; --offset: 85%;">✏️</div>
+        </div>
+
+        <!-- Glowing Vertical Timeline Line -->
+        <div class="edu-timeline-line" id="edu-timeline-line"></div>
+
+        <div class="education-grid">
+          <!-- CARD 1: B.Tech -->
+          <div class="edu-timeline-item reveal reveal-right" data-delay="0">
+            <div class="edu-timeline-dot dot-cyan"></div>
+            <div class="edu-card glass-card hover-lift hover-glow-cyan">
+              <div class="edu-card-content">
+                <div class="edu-icon-box box-cyan">
+                  <span class="edu-emoji">🎓</span>
+                </div>
+                <div class="edu-info">
+                  <div class="edu-header-row">
+                    <span class="edu-duration glow-cyan">2023 — Present</span>
+                    <span class="edu-status status-active">
+                      <span class="status-dot"></span> Currently Pursuing
+                    </span>
+                  </div>
+                  <h3 class="edu-degree">Bachelor of Technology</h3>
+                  <div class="edu-stream">Computer Science & Engineering</div>
+                  <div class="edu-institution">Lovely Professional University</div>
+                  <div class="edu-location">Punjab, India</div>
+                  
+                  <div class="edu-grade-row">
+                    <span class="edu-grade-badge">
+                      <span class="shimmer-effect"></span>
+                      CGPA: 7.25
+                    </span>
+                  </div>
+                  
+                  <p class="edu-description">Focused on AI/ML, Data Structures and Software Engineering</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- CARD 2: 12th -->
+          <div class="edu-timeline-item reveal reveal-right" data-delay="200">
+            <div class="edu-timeline-dot dot-purple"></div>
+            <div class="edu-card glass-card hover-lift hover-glow-purple">
+              <div class="edu-card-content">
+                <div class="edu-icon-box box-purple">
+                  <span class="edu-emoji">🏫</span>
+                </div>
+                <div class="edu-info">
+                  <div class="edu-header-row">
+                    <span class="edu-duration glow-purple">2022 — 2023</span>
+                    <span class="edu-status status-completed">✓ Completed</span>
+                  </div>
+                  <h3 class="edu-degree">Intermediate (12th)</h3>
+                  <div class="edu-stream">Science</div>
+                  <div class="edu-institution">Shiv Jyoti Public School</div>
+                  <div class="edu-location">Jalandhar, Punjab</div>
+                  
+                  <div class="edu-grade-row">
+                    <span class="edu-grade-badge">
+                      <span class="shimmer-effect"></span>
+                      77%
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- CARD 3: 10th -->
+          <div class="edu-timeline-item reveal reveal-right" data-delay="400">
+            <div class="edu-timeline-dot dot-blue"></div>
+            <div class="edu-card glass-card hover-lift hover-glow-blue">
+              <div class="edu-card-content">
+                <div class="edu-icon-box box-blue">
+                  <span class="edu-emoji">📚</span>
+                </div>
+                <div class="edu-info">
+                  <div class="edu-header-row">
+                    <span class="edu-duration glow-blue">2020 — 2021</span>
+                    <span class="edu-status status-completed">✓ Completed</span>
+                  </div>
+                  <h3 class="edu-degree">Matriculation (10th)</h3>
+                  <div class="edu-institution">St. Francis Convent School</div>
+                  <div class="edu-location">Kartarpur, Punjab</div>
+                  
+                  <div class="edu-grade-row">
+                    <span class="edu-grade-badge">
+                      <span class="shimmer-effect"></span>
+                      91.8%
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CONTACT SECTION ========== -->
+  <section id="contact" class="section">
+    <div class="section-decor contact-decor" aria-hidden="true">
+      <div class="mesh-gradient"></div>
+    </div>
+    <div class="container">
+      <div class="section-header reveal reveal-up">
+        <span class="section-tag glass-card-mini">
+          <span class="tag-dot"></span> 08. Contact
+        </span>
+        <h2 class="section-title">
+          Get In <span class="gradient-text">Touch</span>
+        </h2>
+        <p class="section-subtitle">Got a project? Let's build something amazing together</p>
+      </div>
+      <div class="contact-layout reveal reveal-up">
+        
+        <!-- LEFT COLUMN: Contact Form (50%) -->
+        <div class="contact-form-col">
+          <!-- Compact Contact Form -->
+          <div class="glass-card contact-card dark-form-card">
+            <div class="contact-card-glow" aria-hidden="true"></div>
+            <form id="contact-form" class="contact-form">
+              <div class="form-group stack-group">
+                <label for="form-name">Your Name</label>
+                <input type="text" id="form-name" placeholder="Your name" required />
+                <div class="input-glow"></div>
+              </div>
+              <div class="form-group stack-group">
+                <label for="form-email">Your Email</label>
+                <input type="email" id="form-email" placeholder="your@email.com" required />
+                <div class="input-glow"></div>
+              </div>
+              <div class="form-group stack-group">
+                <label for="form-message">Your Message</label>
+                <textarea id="form-message" placeholder="Tell me about your project..." rows="4" required></textarea>
+                <div class="input-glow"></div>
+              </div>
+              <button type="submit" class="btn btn-multicolor btn-full">
+                <span class="btn-shine"></span>
+                Send Message
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M22 2L11 13M22 2L15 22L11 13M22 2L2 9L11 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <!-- RIGHT COLUMN: Spline Scene (50%) -->
+        <div class="contact-spline-col">
+          <div class="spline-float-wrapper">
+            <div class="spline-crop">
+              <spline-viewer 
+                url="https://prod.spline.design/WefsCruhQggaB2b3/scene.splinecode"
+                style="mix-blend-mode: lighten; display: block;">
+              </spline-viewer>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer id="footer" class="footer">
+    <div class="footer-beam" aria-hidden="true"></div>
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-logo">
+          <span class="logo-bracket">&lt;</span>Yuvika Malhotra<span class="logo-slash">/</span><span class="logo-bracket">&gt;</span>
+        </div>
+        <div class="footer-socials">
+          <a href="https://github.com" target="_blank" rel="noopener" class="social-link" aria-label="GitHub">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12"/></svg>
+          </a>
+          <a href="https://linkedin.com" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+          <a href="https://twitter.com" target="_blank" rel="noopener" class="social-link" aria-label="Twitter">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+        </div>
+        <p class="footer-text">Designed & Built by <span class="gradient-text">Yuvika Malhotra</span> © 2024</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========== FLOATING DOCK ========== -->
+  <div class="floating-dock">
+    <a href="#hero" class="dock-item" data-tooltip="Home">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+    </a>
+    <a href="#about" class="dock-item" data-tooltip="About">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+    </a>
+    <a href="#skills" class="dock-item" data-tooltip="Skills">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v16Z"/><path d="M7 18h10"/><path d="M7 14h10"/><path d="M7 10h10"/><path d="M7 6h10"/></svg>
+    </a>
+    <a href="#experience" class="dock-item" data-tooltip="Experience">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+    </a>
+    <a href="#projects" class="dock-item" data-tooltip="Projects">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2H2v10h10V2z"/><path d="M22 2h-10v10h10V2z"/><path d="M12 12H2v10h10V12z"/><path d="M22 12h-10v10h10V12z"/></svg>
+    </a>
+    <a href="#credentials" class="dock-item" data-tooltip="Credentials">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7V4a2 2 0 0 1 2-2h8.5L20 7.5V20a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-3"/><polyline points="14 2 14 8 20 8"/><path d="M9 13l2 2 4-4"/></svg>
+    </a>
+    <a href="#contact" class="dock-item" data-tooltip="Contact">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l2.27-2.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    </a>
+  </div>
+
+  <script src="js/stars.js"></script>
+  <script src="js/particles.js"></script>
+  <script src="js/cursor.js"></script>
+  <script src="js/parallax.js"></script>
+  <script src="js/flip-words.js"></script>
+  <script src="js/counter.js"></script>
+  <script src="js/glow-card.js"></script>
+  <script src="js/tilt.js"></script>
+  <script src="js/scroll.js"></script>
+  <script src="js/neural.js"></script>
+  <script src="js/certificates.js"></script>
+  <script src="js/globe.js"></script>
+  <script src="js/timeline.js"></script>
+  <script src="js/education-timeline.js"></script>
+  <script src="js/project-stack.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
