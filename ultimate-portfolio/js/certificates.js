@@ -45,7 +45,12 @@
     img.src = 'Certificates/' + filename;
     img.alt = 'Certificate';
     img.loading = 'lazy';
-    img.addEventListener('click', function () { openCertModal(img.src); });
+    card.addEventListener('click', function () {
+      card.classList.remove('shine-anim');
+      void card.offsetWidth; // trigger reflow
+      card.classList.add('shine-anim');
+      setTimeout(function() { openCertModal(img.src); }, 250);
+    });
     card.appendChild(img);
     scrollTrack.appendChild(card);
   });
@@ -58,7 +63,12 @@
     img.src = 'Certificates/' + filename;
     img.alt = 'Certificate';
     img.loading = 'lazy';
-    img.addEventListener('click', function () { openCertModal(img.src); });
+    card.addEventListener('click', function () {
+      card.classList.remove('shine-anim');
+      void card.offsetWidth;
+      card.classList.add('shine-anim');
+      setTimeout(function() { openCertModal(img.src); }, 250);
+    });
     card.appendChild(img);
     scrollTrack.appendChild(card);
   });
@@ -73,6 +83,11 @@
     img.src = 'Badges/' + filename;
     img.alt = 'Badge';
     img.loading = 'lazy';
+    card.addEventListener('click', function () {
+      card.classList.remove('shine-anim');
+      void card.offsetWidth;
+      card.classList.add('shine-anim');
+    });
     card.appendChild(img);
     badgesGrid.appendChild(card);
   });
@@ -85,6 +100,11 @@
     img.src = 'Badges/' + filename;
     img.alt = 'Badge';
     img.loading = 'lazy';
+    card.addEventListener('click', function () {
+      card.classList.remove('shine-anim');
+      void card.offsetWidth;
+      card.classList.add('shine-anim');
+    });
     card.appendChild(img);
     badgesGrid.appendChild(card);
   });

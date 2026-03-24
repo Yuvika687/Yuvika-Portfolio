@@ -56,7 +56,7 @@ img { max-width: 100%; display: block; }
 strong { color: var(--text-primary); font-weight: 600; }
 
 .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
-.section { min-height: 100vh; padding: 140px 0 100px; position: relative; overflow: hidden; }
+.section { padding: 60px 0 60px; position: relative; overflow: hidden; }
 .gradient-text {
   background: var(--accent-gradient);
   -webkit-background-clip: text; -webkit-text-fill-color: transparent;
@@ -74,29 +74,53 @@ strong { color: var(--text-primary); font-weight: 600; }
 }
 #preloader.loaded { opacity: 0; visibility: hidden; pointer-events: none; }
 
-.preloader-inner { text-align: center; position: relative; }
+.preloader-inner {
+  text-align: center; position: relative;
+  display: flex; flex-direction: column; align-items: center;
+}
 
 .preloader-ring {
-  width: 120px; height: 120px; margin: 0 auto 30px;
+  width: 80px; height: 80px; margin: 0 auto 40px;
   border-radius: 50%; position: relative;
-  background: conic-gradient(from 0deg, var(--accent-1), var(--accent-2), var(--accent-3), var(--accent-1));
-  animation: preloaderSpin 2s linear infinite;
-  padding: 3px;
+  border: 2px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 0 50px rgba(6, 182, 212, 0.1);
 }
+/* Glowing planet core */
 .preloader-ring-inner {
-  width: 100%; height: 100%; border-radius: 50%;
-  background: var(--bg-primary);
+  position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+  width: 30px; height: 30px; border-radius: 50%;
+  background: radial-gradient(circle, #06b6d4 0%, #7c3aed 100%);
+  box-shadow: 0 0 20px #06b6d4, inset 0 0 10px #7c3aed;
+  animation: planetPulse 2s ease-in-out infinite;
+}
+/* Orbital rings */
+.preloader-ring::before {
+  content: ''; position: absolute; inset: -15px; border-radius: 50%;
+  border: 2px solid rgba(6, 182, 212, 0.1);
+  border-top-color: #06b6d4; border-bottom-color: #7c3aed;
+  animation: preloaderSpin 2s linear infinite;
+}
+.preloader-ring::after {
+  content: ''; position: absolute; inset: -30px; border-radius: 50%;
+  border: 1px dashed rgba(124, 58, 237, 0.4);
+  animation: preloaderSpin 6s linear infinite reverse;
+}
+@keyframes planetPulse { 
+  0%, 100% { transform: translate(-50%, -50%) scale(0.9); box-shadow: 0 0 20px rgba(6,182,212,0.8); } 
+  50% { transform: translate(-50%, -50%) scale(1.2); box-shadow: 0 0 40px rgba(6,182,212,1), 0 0 60px rgba(124,58,237,0.8); } 
 }
 @keyframes preloaderSpin { to { transform: rotate(360deg); } }
 
 .preloader-text {
   font-family: var(--font-heading);
-  font-size: clamp(1.8rem, 4vw, 3rem);
-  font-weight: 800; letter-spacing: 0.15em;
+  font-size: clamp(1.4rem, 3vw, 2.2rem);
+  font-weight: 800; letter-spacing: 0.2em;
   background: var(--accent-gradient);
   -webkit-background-clip: text; -webkit-text-fill-color: transparent;
   background-clip: text; margin-bottom: 24px;
+  animation: textPulse 2s ease-in-out infinite;
 }
+@keyframes textPulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.6; } }
 
 .preloader-bar-track {
   width: 200px; height: 3px; background: rgba(255,255,255,0.08);
@@ -131,7 +155,7 @@ strong { color: var(--text-primary); font-weight: 600; }
    NAVIGATION — Pill-shaped glass navbar
    ========================================== */
 .glass-nav {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  position: absolute; top: 0; left: 0; right: 0; z-index: 1000;
   padding: 16px 24px;
   transition: var(--transition);
 }
@@ -1699,7 +1723,7 @@ spline-viewer #logo {
   width: 200px; height: 1px;
   background: linear-gradient(90deg, transparent, var(--accent-1), var(--accent-2), transparent);
 }
-.footer-inner { display: flex; flex-direction: column; align-items: center; gap: 20px; }
+.footer-inner { display: flex; flex-direction: row; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap; text-align: center; }
 .footer-logo { font-family: var(--font-heading); font-size: 1.4rem; font-weight: 700; }
 .footer-socials { display: flex; gap: 12px; }
 .social-link {
@@ -1809,9 +1833,10 @@ spline-viewer #logo {
    3D GLOBE — About/Contact section
    ========================================== */
 .globe-container {
-  width: 100%; height: 500px; position: relative;
+  width: 100%; height: 380px; position: relative;
   display: flex; align-items: center; justify-content: center;
   z-index: 1;
+  margin-top: -30px;
 }
 #globe-canvas {
   width: 100%; height: 100%; max-width: 800px;
@@ -1861,8 +1886,14 @@ spline-viewer #logo {
 }
 .cert-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 12px 40px rgba(124, 58, 237, 0.15);
-  border-color: rgba(124, 58, 237, 0.2);
+  box-shadow: 0 0 40px rgba(165, 243, 252, 0.4);
+  border-color: rgba(165, 243, 252, 0.8);
+}
+.cert-card:active {
+  transform: scale(0.96);
+  box-shadow: 0 0 30px rgba(6, 182, 212, 0.6), inset 0 0 20px rgba(255, 255, 255, 0.2);
+  border-color: rgba(6, 182, 212, 0.8);
+  transition: all 0.1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 .cert-card img {
   width: 100%; height: 240px;
@@ -1962,8 +1993,14 @@ spline-viewer #logo {
 }
 .badge-card:hover {
   transform: translateY(-6px) scale(1.04);
-  box-shadow: 0 0 30px rgba(124, 58, 237, 0.2), 0 12px 40px rgba(0,0,0,0.3);
-  border-color: rgba(124, 58, 237, 0.3);
+  box-shadow: 0 0 40px rgba(165, 243, 252, 0.4);
+  border-color: rgba(165, 243, 252, 0.8);
+}
+.badge-card:active {
+  transform: scale(0.95);
+  box-shadow: 0 0 35px rgba(124, 58, 237, 0.6), inset 0 0 20px rgba(255, 255, 255, 0.2);
+  border-color: rgba(124, 58, 237, 0.8);
+  transition: all 0.1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 .badge-card img {
   width: 100%; max-width: 90px; height: auto;
@@ -1971,6 +2008,154 @@ spline-viewer #logo {
   transition: transform 0.35s ease;
 }
 .badge-card:hover img { transform: scale(1.08); }
+
+/* Click sweep shine animation */
+.shine-anim::after {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 50%; height: 100%;
+  background: linear-gradient(to right, transparent, rgba(255,255,255,0.9), transparent);
+  transform: skewX(-20deg);
+  animation: sweepShine 0.5s ease-out forwards;
+  z-index: 10;
+  pointer-events: none;
+}
+@keyframes sweepShine {
+  0% { left: -100%; }
+  100% { left: 200%; }
+}
+
+/* ==========================================
+   COMPETITIVE PROGRAMMING SECTION
+   ========================================== */
+.cp-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  margin-bottom: 40px;
+}
+.cp-card {
+  padding: 35px 24px;
+  text-align: center;
+  border-radius: var(--radius-lg);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  background: var(--bg-card);
+  border: 1px solid var(--glass-border);
+}
+.cp-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 15px 40px rgba(6, 182, 212, 0.2), inset 0 0 20px rgba(6, 182, 212, 0.1);
+  border-color: rgba(6, 182, 212, 0.5);
+}
+.cp-icon {
+  font-size: 2.8rem;
+  margin-bottom: 16px;
+  display: inline-block;
+  filter: drop-shadow(0 0 15px rgba(6, 182, 212, 0.4));
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.cp-card:hover .cp-icon {
+  transform: scale(1.15) rotate(8deg);
+}
+.cp-number {
+  font-family: var(--font-heading);
+  font-size: 2.6rem;
+  font-weight: 800;
+  margin-bottom: 8px;
+  letter-spacing: -0.02em;
+}
+.gradient-text-cyan {
+  background: linear-gradient(135deg, #06b6d4, #a5f3fc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.cp-label {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.4;
+  margin: 0;
+}
+
+/* GITHUB HEATMAP */
+.github-heatmap-wrapper {
+  width: 100%;
+}
+.github-heatmap-card {
+  padding: 30px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--bg-card);
+  border: 1px solid var(--glass-border);
+}
+.heatmap-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+.heatmap-title {
+  display: flex;
+  align-items: center;
+  color: var(--text-primary);
+  font-weight: 600;
+  font-size: 1.05rem;
+}
+.heatmap-legend {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.heatmap-grid-container {
+  display: grid;
+  grid-template-rows: repeat(7, 1fr);
+  grid-auto-flow: column;
+  gap: 4px;
+}
+.heatmap-months {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+  padding-left: 2px;
+  padding-right: 18px;
+}
+.heatmap-days {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  padding-top: 32px;
+  padding-bottom: 12px;
+  text-align: right;
+  padding-right: 5px;
+}
+.heatmap-cell {
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+  background-color: rgba(255, 255, 255, 0.05);
+  transition: transform 0.2s ease, opacity 0.2s ease;
+  cursor: pointer;
+}
+.heatmap-cell:hover {
+  transform: scale(1.3);
+  z-index: 10;
+  box-shadow: 0 0 12px rgba(6, 182, 212, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+}
+.level-0 { background-color: rgba(255, 255, 255, 0.04); }
+.level-1 { background-color: rgba(6, 182, 212, 0.25); }
+.level-2 { background-color: rgba(6, 182, 212, 0.5); }
+.level-3 { background-color: rgba(6, 182, 212, 0.75); }
+.level-4 { background-color: rgba(6, 182, 212, 1); box-shadow: 0 0 8px rgba(6, 182, 212, 0.5); }
 
 /* ==========================================
    EDUCATION SECTION
@@ -2245,8 +2430,13 @@ spline-viewer #logo {
 /* ==========================================
    RESPONSIVE
    ========================================== */
+@media (max-width: 1024px) {
+  .cp-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+  .github-heatmap-card { overflow-x: auto; }
+}
+
 @media (max-width: 768px) {
-  .section { padding: 100px 0 70px; }
+  .section { padding: 60px 0 60px; }
   .section-header { margin-bottom: 44px; }
   .glass-card { padding: 24px; }
   .hero-content { flex-direction: column; text-align: left; padding: 100px 24px 60px; }
@@ -2273,7 +2463,7 @@ spline-viewer #logo {
   .hex-grid { display: none; }
   .floating-code { display: none; }
   .orbit-wrapper { height: 350px; }
-  .globe-container { height: 350px; }
+  .globe-container { height: 320px; }
   .badges-grid { grid-template-columns: repeat(2, 1fr); }
   .edu-card-content { flex-direction: column; align-items: flex-start; gap: 16px; padding: 20px; }
   .edu-icon-box { margin-bottom: 0; }
@@ -2295,4 +2485,7 @@ spline-viewer #logo {
   .badges-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
   .cert-card { flex: 0 0 260px; min-width: 260px; }
   .badge-card { padding: 20px; }
+  .cp-grid { grid-template-columns: 1fr; gap: 20px; }
+  .github-heatmap-card { padding: 16px; }
+  .heatmap-header { flex-direction: column; gap: 12px; align-items: flex-start; }
 }
