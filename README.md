@@ -21,11 +21,11 @@
 
 <br/>
 
-## 🎬 Tour
+## 🪐 Live preview
 
 <div align="center">
-  <a href="https://yuvika.vercel.app"><img src="./.github/readme/demo.gif" width="100%" alt="Scroll-through of the portfolio: hero, about, experience, projects, credentials, competitive programming and education." /></a>
-  <sub>Live at <a href="https://yuvika.vercel.app"><b>yuvika.vercel.app</b></a></sub>
+  <a href="https://yuvika.vercel.app"><img src="./.github/readme/showcase.svg" width="100%" alt="The portfolio auto-scrolling on a desktop browser and a phone — hero, about, experience, projects, credentials, problem solving, education and contact." /></a>
+  <sub>Click to open <a href="https://yuvika.vercel.app"><b>yuvika.vercel.app</b></a></sub>
 </div>
 
 <br/>
