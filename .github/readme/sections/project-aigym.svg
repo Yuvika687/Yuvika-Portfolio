@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="620" height="300" viewBox="0 0 620 300" role="img" aria-label="AI Gym Pro: Smart fitness &amp; diet platform. 3 core modules. Stack: Python, FastAPI, JavaScript.">
+<defs>
+  <radialGradient id="bg" cx="30%" cy="0%" r="110%"><stop offset="0" stop-color="#160A33"/><stop offset=".55" stop-color="#08061A"/><stop offset="1" stop-color="#04030C"/></radialGradient>
+  <radialGradient id="gl" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#22C55E" stop-opacity=".35"/><stop offset="1" stop-color="#22C55E" stop-opacity="0"/></radialGradient>
+  <linearGradient id="rim" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#A78BFA" stop-opacity=".55"/><stop offset=".5" stop-color="#6366F1" stop-opacity=".15"/><stop offset="1" stop-color="#22D3EE" stop-opacity=".5"/></linearGradient>
+  <linearGradient id="vc" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#8B5CF6"/><stop offset=".55" stop-color="#6366F1"/><stop offset="1" stop-color="#22D3EE"/></linearGradient>
+  <linearGradient id="hot" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#C026D3"/><stop offset=".5" stop-color="#F43F5E"/><stop offset="1" stop-color="#FBBF24"/></linearGradient>
+  <linearGradient id="shine" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".07"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+  <pattern id="grid" width="28" height="28" patternUnits="userSpaceOnUse"><path d="M28 0H0V28" fill="none" stroke="#fff" stroke-opacity=".028"/></pattern>
+  <clipPath id="fr"><rect width="620" height="300" rx="22"/></clipPath>
+  <style>
+.s{font-family:'Inter','Segoe UI',-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}
+.m{font-family:'JetBrains Mono','SF Mono',ui-monospace,Menlo,Consolas,monospace}
+.tw{fill:#fff;animation:tw 4.5s ease-in-out infinite}@keyframes tw{0%,100%{opacity:.1}50%{opacity:.85}}
+.rise{animation:rise .9s cubic-bezier(.2,.8,.2,1) both}@keyframes rise{from{opacity:0;transform:translateY(12px)}}
+.pulse{transform-box:fill-box;transform-origin:center;animation:pulse 2.4s ease-in-out infinite}@keyframes pulse{50%{transform:scale(1.9);opacity:0}}
+.blink{animation:blink 1.8s ease-in-out infinite}@keyframes blink{50%{opacity:.25}}
+.grow{transform-box:fill-box;transform-origin:0 50%;animation:grow 1.6s cubic-bezier(.2,.8,.2,1) both}@keyframes grow{from{transform:scaleX(0)}}
+.draw{animation:draw 2.2s cubic-bezier(.4,0,.2,1) both}@keyframes draw{from{stroke-dashoffset:var(--len)}}
+.sweep{animation:sweep 5s linear infinite}@keyframes sweep{to{stroke-dashoffset:-1000}}
+.scan{animation:scan 6s ease-in-out infinite}@keyframes scan{0%,100%{transform:translateX(-40%)}50%{transform:translateX(140%)}}
+</style>
+</defs>
+<g clip-path="url(#fr)">
+  <rect width="620" height="300" fill="url(#bg)"/><rect width="620" height="300" fill="url(#grid)"/>
+  <ellipse cx="496" cy="45" rx="217" ry="180" fill="url(#gl)"/>
+  <circle class="tw" cx="217" cy="9" r="0.6" style="animation-delay:0.6s"/><circle class="tw" cx="248" cy="12" r="0.6" style="animation-delay:3.5s"/><circle class="tw" cx="154" cy="192" r="0.8" style="animation-delay:0.5s"/><circle class="tw" cx="481" cy="186" r="1" style="animation-delay:1.6s"/><circle class="tw" cx="356" cy="121" r="0.8" style="animation-delay:3.5s"/><circle class="tw" cx="324" cy="118" r="1" style="animation-delay:3.7s"/><circle class="tw" cx="527" cy="219" r="0.8" style="animation-delay:2.3s"/><circle class="tw" cx="433" cy="254" r="0.6" style="animation-delay:1.8s"/><circle class="tw" cx="372" cy="228" r="1" style="animation-delay:3.7s"/><circle class="tw" cx="465" cy="211" r="0.6" style="animation-delay:2.0s"/><circle class="tw" cx="23" cy="104" r="0.8" style="animation-delay:2.1s"/><circle class="tw" cx="21" cy="150" r="1.2" style="animation-delay:0.6s"/><circle class="tw" cx="106" cy="63" r="1.2" style="animation-delay:0.2s"/><circle class="tw" cx="483" cy="288" r="1" style="animation-delay:1.6s"/>
+  <rect x="0" y="0" width="620" height="4" fill="#22C55E"/><rect x="1" y="1" width="618" height="298" rx="21" fill="none" stroke="#22C55E" stroke-width="1.6" stroke-dasharray="90 1100" class="sweep"/><text x="30" y="52" class="m" font-size="13" fill="#22C55E">05 /</text><rect x="505" y="34" width="85" height="22" rx="11" fill="#22C55E" fill-opacity=".1" stroke="#22C55E" stroke-opacity=".45"/><text x="515" y="50.0" class="m" font-size="10.5" fill="#22C55E">FULL-STACK</text><text x="30" y="92" class="s" font-size="27" font-weight="800" letter-spacing="-.4" fill="#fff">AI Gym Pro</text><text x="30" y="118" class="s" font-size="14.5" fill="#A9A8C8">Smart fitness &amp; diet platform</text><rect x="30" y="140" width="190" height="96" rx="14" fill="#22C55E" fill-opacity=".08" stroke="#22C55E" stroke-opacity=".3"/><text x="48" y="190" class="s" font-size="38" font-weight="800" fill="#22C55E">3</text><text x="48" y="218" class="m" font-size="11" fill="#A9A8C8">core modules</text><text x="244" y="168" class="s" font-size="13.5" fill="#ECEBFA" opacity=".9"><tspan fill="#22C55E">▸ </tspan>Workout logging · diet planning</text><text x="244" y="196" class="s" font-size="13.5" fill="#ECEBFA" opacity=".9"><tspan fill="#22C55E">▸ </tspan>AI chat coach for personalised plans</text><rect x="244" y="210" width="61" height="23" rx="12" fill="#22C55E" fill-opacity=".1" stroke="#22C55E" stroke-opacity=".45"/><text x="254" y="226.5" class="m" font-size="11" fill="#22C55E">Python</text><rect x="313" y="210" width="68" height="23" rx="12" fill="#22C55E" fill-opacity=".1" stroke="#22C55E" stroke-opacity=".45"/><text x="323" y="226.5" class="m" font-size="11" fill="#22C55E">FastAPI</text><rect x="389" y="210" width="88" height="23" rx="12" fill="#22C55E" fill-opacity=".1" stroke="#22C55E" stroke-opacity=".45"/><text x="399" y="226.5" class="m" font-size="11" fill="#22C55E">JavaScript</text><text x="30" y="272" class="m" font-size="12" fill="#C4B5FD">Yuvika687/AI-Personal-Fitness-and-Diet-Coach <tspan fill="#22C55E">→</tspan></text>
+  <g class="scan"><rect x="0" y="0" width="155" height="300" fill="url(#shine)"/></g>
+</g>
+<rect x=".5" y=".5" width="619" height="299" rx="22" fill="none" stroke="url(#rim)"/>
+</svg>
