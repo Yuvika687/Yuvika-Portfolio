@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="460" viewBox="0 0 1280 460" role="img" aria-label="Yuvika Malhotra — AI/ML Engineer. B.Tech CSE at Lovely Professional University. Portfolio live at yuvika.vercel.app.">
+<defs>
+  <radialGradient id="bg" cx="70%" cy="40%" r="80%"><stop offset="0" stop-color="#1B0B3D"/><stop offset=".45" stop-color="#0A0618"/><stop offset="1" stop-color="#04030C"/></radialGradient>
+  <radialGradient id="glow" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#7C3AED" stop-opacity=".75"/><stop offset=".55" stop-color="#6D28D9" stop-opacity=".22"/><stop offset="1" stop-color="#6D28D9" stop-opacity="0"/></radialGradient>
+  <radialGradient id="teal" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#06B6D4" stop-opacity=".35"/><stop offset="1" stop-color="#06B6D4" stop-opacity="0"/></radialGradient>
+  <linearGradient id="disk" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#C4B5FD" stop-opacity="0"/><stop offset=".3" stop-color="#E9D5FF"/><stop offset=".5" stop-color="#FFFFFF"/><stop offset=".7" stop-color="#E9D5FF"/><stop offset="1" stop-color="#C4B5FD" stop-opacity="0"/></linearGradient>
+  <linearGradient id="name" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#8B5CF6"/><stop offset=".55" stop-color="#6366F1"/><stop offset="1" stop-color="#22D3EE"/></linearGradient>
+  <linearGradient id="flip" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#C026D3"/><stop offset=".5" stop-color="#F43F5E"/><stop offset="1" stop-color="#22D3EE"/></linearGradient>
+  <filter id="blur" x="-30%" y="-80%" width="160%" height="260%"><feGaussianBlur stdDeviation="6"/></filter>
+  <filter id="soft" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="14"/></filter>
+  <clipPath id="frame"><rect width="1280" height="460" rx="24"/></clipPath>
+  <clipPath id="wclip"><rect x="0" y="-36" height="48" width="0"><animate attributeName="width" dur="12s" repeatCount="indefinite" values="0;420;420;0;0;420;420;0;0;420;420;0;0;420;420;0" keyTimes="0.0000;0.0350;0.2150;0.2500;0.2500;0.2850;0.4650;0.5000;0.5000;0.5350;0.7150;0.7500;0.7500;0.7850;0.9650;1.0000"/></rect></clipPath>
+  <style>
+    .s{font-family:'Outfit','Inter','Segoe UI',-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}
+    .m{font-family:'JetBrains Mono','SF Mono',ui-monospace,Menlo,Consolas,monospace}
+    .tw{fill:#fff;animation:tw 4.5s ease-in-out infinite} @keyframes tw{0%,100%{opacity:.15}50%{opacity:.95}}
+    .spin{transform-origin:960px 190px;animation:spin 18s linear infinite} .spinR{transform-origin:960px 190px;animation:spin 30s linear infinite reverse}
+    @keyframes spin{to{transform:rotate(360deg)}}
+    .breath{transform-origin:960px 190px;animation:br 5s ease-in-out infinite} @keyframes br{50%{transform:scale(1.08);opacity:.8}}
+    .shimmer{animation:sh 3.6s ease-in-out infinite} @keyframes sh{50%{opacity:.55}}
+    .rise{animation:rise 1s cubic-bezier(.2,.8,.2,1) both} @keyframes rise{from{opacity:0;transform:translateY(14px)}}
+    .caret{animation:caret 1s steps(1) infinite} @keyframes caret{50%{opacity:0}}
+    .dot{animation:dot 1.8s ease-in-out infinite} @keyframes dot{50%{opacity:.3}}
+  </style>
+</defs>
+<g clip-path="url(#frame)">
+  <rect width="1280" height="460" fill="url(#bg)"/>
+  <ellipse cx="1180" cy="430" rx="300" ry="170" fill="url(#teal)"/>
+  <circle class="tw" cx="936" cy="296" r="1.4" style="animation-delay:1.8s"/><circle class="tw" cx="1212" cy="107" r="0.9" style="animation-delay:3.2s"/><circle class="tw" cx="984" cy="332" r="0.9" style="animation-delay:0.4s"/><circle class="tw" cx="631" cy="82" r="0.7" style="animation-delay:2.2s"/><circle class="tw" cx="95" cy="314" r="1.4" style="animation-delay:3.9s"/><circle class="tw" cx="1270" cy="342" r="0.9" style="animation-delay:2.5s"/><circle class="tw" cx="1092" cy="42" r="0.7" style="animation-delay:0.1s"/><circle class="tw" cx="505" cy="317" r="0.7" style="animation-delay:3.1s"/><circle class="tw" cx="678" cy="235" r="0.9" style="animation-delay:2.1s"/><circle class="tw" cx="612" cy="265" r="0.7" style="animation-delay:2.6s"/><circle class="tw" cx="946" cy="345" r="1.1" style="animation-delay:1.6s"/><circle class="tw" cx="1138" cy="440" r="0.7" style="animation-delay:2.8s"/><circle class="tw" cx="655" cy="398" r="0.9" style="animation-delay:2.1s"/><circle class="tw" cx="70" cy="45" r="0.7" style="animation-delay:1.6s"/><circle class="tw" cx="605" cy="207" r="0.7" style="animation-delay:3.8s"/><circle class="tw" cx="11" cy="119" r="0.9" style="animation-delay:3.7s"/><circle class="tw" cx="117" cy="250" r="1.4" style="animation-delay:3.9s"/><circle class="tw" cx="823" cy="224" r="0.7" style="animation-delay:2.3s"/><circle class="tw" cx="416" cy="408" r="1.1" style="animation-delay:1.3s"/><circle class="tw" cx="647" cy="180" r="0.7" style="animation-delay:3.9s"/><circle class="tw" cx="251" cy="78" r="0.9" style="animation-delay:2.8s"/><circle class="tw" cx="32" cy="40" r="1.4" style="animation-delay:3.2s"/><circle class="tw" cx="373" cy="359" r="0.9" style="animation-delay:1.8s"/><circle class="tw" cx="400" cy="384" r="0.9" style="animation-delay:1.7s"/><circle class="tw" cx="795" cy="69" r="1.4" style="animation-delay:1.7s"/><circle class="tw" cx="445" cy="10" r="1.1" style="animation-delay:3.5s"/><circle class="tw" cx="1223" cy="165" r="0.7" style="animation-delay:0.8s"/><circle class="tw" cx="817" cy="447" r="0.7" style="animation-delay:0.2s"/><circle class="tw" cx="309" cy="119" r="1.4" style="animation-delay:1.0s"/><circle class="tw" cx="1259" cy="178" r="1.1" style="animation-delay:1.5s"/><circle class="tw" cx="162" cy="56" r="0.9" style="animation-delay:2.3s"/><circle class="tw" cx="507" cy="17" r="1.1" style="animation-delay:1.5s"/><circle class="tw" cx="938" cy="75" r="1.4" style="animation-delay:3.3s"/><circle class="tw" cx="287" cy="207" r="0.9" style="animation-delay:2.5s"/><circle class="tw" cx="646" cy="126" r="0.9" style="animation-delay:2.9s"/><circle class="tw" cx="334" cy="388" r="0.9" style="animation-delay:2.7s"/><circle class="tw" cx="805" cy="257" r="0.7" style="animation-delay:1.7s"/><circle class="tw" cx="222" cy="65" r="0.7" style="animation-delay:2.0s"/><circle class="tw" cx="532" cy="132" r="1.4" style="animation-delay:1.0s"/><circle class="tw" cx="1231" cy="261" r="1.1" style="animation-delay:2.1s"/><circle class="tw" cx="150" cy="74" r="0.9" style="animation-delay:1.9s"/><circle class="tw" cx="1268" cy="47" r="1.1" style="animation-delay:0.8s"/><circle class="tw" cx="427" cy="393" r="0.7" style="animation-delay:0.3s"/><circle class="tw" cx="852" cy="238" r="0.9" style="animation-delay:0.2s"/><circle class="tw" cx="370" cy="154" r="1.1" style="animation-delay:2.1s"/><circle class="tw" cx="279" cy="57" r="1.1" style="animation-delay:0.6s"/>
+  <!-- black hole -->
+  <g class="breath"><circle cx="960" cy="190" r="230" fill="url(#glow)"/></g>
+  <g class="shimmer">
+    <ellipse cx="960" cy="190" rx="360" ry="26" fill="url(#disk)" opacity=".55" filter="url(#blur)"/>
+    <ellipse cx="960" cy="190" rx="300" ry="9" fill="url(#disk)" opacity=".9"/>
+  </g>
+  <circle cx="960" cy="190" r="118" fill="none" stroke="#E9D5FF" stroke-width="10" opacity=".35" filter="url(#soft)"/>
+  <g class="spin"><circle cx="960" cy="190" r="112" fill="none" stroke="url(#disk)" stroke-width="5" stroke-dasharray="210 140 90 264"/></g>
+  <g class="spinR"><circle cx="960" cy="190" r="132" fill="none" stroke="#A78BFA" stroke-opacity=".45" stroke-width="1.4" stroke-dasharray="3 12"/></g>
+  <circle cx="960" cy="190" r="98" fill="#05030D"/>
+  <path d="M672 190 Q960 214 1248 190" fill="none" stroke="#fff" stroke-opacity=".85" stroke-width="2.4" filter="url(#blur)"/>
+  <path d="M700 190 Q960 205 1220 190" fill="none" stroke="#F5F3FF" stroke-width="1.6"/>
+
+  <!-- copy -->
+  <g class="rise" style="animation-delay:.05s">
+    <rect x="80" y="62" width="268" height="32" rx="16" fill="#22C55E" fill-opacity=".1" stroke="#22C55E" stroke-opacity=".45"/>
+    <circle cx="101" cy="78" r="4.5" fill="#22C55E" class="dot"/>
+    <text x="116" y="83" class="m" font-size="12.5" letter-spacing="1.6" fill="#86EFAC">OPEN TO AI/ML ROLES · 2027</text>
+  </g>
+  <g class="rise" style="animation-delay:.15s"><text x="80" y="140" class="s" font-size="26" font-weight="500" fill="#C4C3E0">Hi, I'm</text></g>
+  <g class="rise" style="animation-delay:.25s"><text x="76" y="214" class="s" font-size="78" font-weight="800" letter-spacing="-2.5" fill="url(#name)">Yuvika Malhotra</text></g>
+  <g class="rise" style="animation-delay:.4s" transform="translate(80 276)">
+    <text x="0" y="0" class="s" font-size="22" fill="#A9A8C8">I am a</text>
+    <g transform="translate(86 0)"><g clip-path="url(#wclip)"><text x="0" y="0" class="s" font-size="30" font-weight="800" fill="url(#flip)" opacity="1">AI/ML Enthusiast<animate attributeName="opacity" dur="12s" repeatCount="indefinite" values="1;1;0;0" keyTimes="0;0.2500;0.2501;1"/></text><text x="0" y="0" class="s" font-size="30" font-weight="800" fill="url(#flip)" opacity="0">Smart Solution Builder<animate attributeName="opacity" dur="12s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0;0.2500;0.2501;0.5000;0.5001;1"/></text><text x="0" y="0" class="s" font-size="30" font-weight="800" fill="url(#flip)" opacity="0">ML Engineer in Making<animate attributeName="opacity" dur="12s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0;0.5000;0.5001;0.7500;0.7501;1"/></text><text x="0" y="0" class="s" font-size="30" font-weight="800" fill="url(#flip)" opacity="0">Data &amp; Innovation Driven<animate attributeName="opacity" dur="12s" repeatCount="indefinite" values="0;0;1;1" keyTimes="0;0.7500;0.7501;1"/></text></g></g>
+  </g>
+  <g class="rise" style="animation-delay:.55s">
+    <text x="80" y="322" class="s" font-size="17" fill="#B9B8D6">B.Tech CSE · Lovely Professional University · Punjab, India</text>
+  </g>
+  <g class="rise" style="animation-delay:.7s" transform="translate(80 350)">
+    <g><rect width="128" height="60" rx="12" fill="#0B0820" fill-opacity=".75" stroke="#8B5CF6" stroke-opacity=".4"/><text x="16" y="30" class="s" font-size="24" font-weight="800" fill="#fff">2+</text><text x="16" y="48" class="m" font-size="10" letter-spacing="1.4" fill="#A9A8C8">INTERNSHIPS</text></g>
+    <g transform="translate(140 0)"><rect width="128" height="60" rx="12" fill="#0B0820" fill-opacity=".75" stroke="#22D3EE" stroke-opacity=".4"/><text x="16" y="30" class="s" font-size="24" font-weight="800" fill="#fff">9+</text><text x="16" y="48" class="m" font-size="10" letter-spacing="1.4" fill="#A9A8C8">PROJECTS LIVE</text></g>
+    <g transform="translate(280 0)"><rect width="128" height="60" rx="12" fill="#0B0820" fill-opacity=".75" stroke="#F43F5E" stroke-opacity=".4"/><text x="16" y="30" class="s" font-size="24" font-weight="800" fill="#fff">18+</text><text x="16" y="48" class="m" font-size="10" letter-spacing="1.4" fill="#A9A8C8">CERTIFICATIONS</text></g>
+    <g transform="translate(420 0)"><rect width="128" height="60" rx="12" fill="#0B0820" fill-opacity=".75" stroke="#FBBF24" stroke-opacity=".4"/><text x="16" y="30" class="s" font-size="24" font-weight="800" fill="#fff">246+</text><text x="16" y="48" class="m" font-size="10" letter-spacing="1.4" fill="#A9A8C8">DSA PROBLEMS</text></g>
+  </g>
+</g>
+<rect x=".5" y=".5" width="1279" height="459" rx="24" fill="none" stroke="#A78BFA" stroke-opacity=".3"/>
+</svg>
