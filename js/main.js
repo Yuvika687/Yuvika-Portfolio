@@ -32,18 +32,62 @@
   // --- Contact form (visual only) ---
   const form = document.getElementById('contact-form');
   if (form) {
-    form.addEventListener('submit', (e) => {
+    // Messages are delivered to my inbox through FormSubmit (no backend needed).
+    // If that fails, fall back to the visitor's own mail app so nothing is lost.
+    const CONTACT_EMAIL = 'yuvikamalhotra1414@gmail.com';
+    const status = form.querySelector('.form-status');
+    const setStatus = (text, tone) => {
+      if (!status) return;
+      status.textContent = text;
+      status.dataset.tone = tone || '';
+    };
+
+    form.addEventListener('submit', async (e) => {
       e.preventDefault();
       const btn = form.querySelector('button[type="submit"]');
       const originalText = btn.innerHTML;
-      btn.innerHTML = '✓ Message Sent!';
-      btn.style.background = 'linear-gradient(135deg, #059669 0%, #06b6d4 100%)';
+      const data = Object.fromEntries(new FormData(form));
+      if (data._honey) return; // bot filled the hidden field
 
-      setTimeout(() => {
+      btn.disabled = true;
+      btn.innerHTML = 'Sending…';
+      setStatus('', '');
+
+      const restore = () => {
+        btn.disabled = false;
         btn.innerHTML = originalText;
         btn.style.background = '';
+      };
+
+      try {
+        const res = await fetch(`https://formsubmit.co/ajax/${CONTACT_EMAIL}`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+          body: JSON.stringify({
+            name: data.name,
+            email: data.email,
+            message: data.message,
+            _replyto: data.email,
+            _subject: `Portfolio message from ${data.name}`,
+            _template: 'table',
+            _captcha: 'false',
+          }),
+        });
+        const body = await res.json().catch(() => ({}));
+        if (!res.ok || String(body.success) !== 'true') throw new Error(body.message || 'send failed');
+
+        btn.innerHTML = '✓ Message Sent!';
+        btn.style.background = 'linear-gradient(135deg, #059669 0%, #06b6d4 100%)';
+        setStatus("Thanks! I'll get back to you soon.", 'ok');
         form.reset();
-      }, 3000);
+        setTimeout(restore, 3500);
+      } catch (err) {
+        restore();
+        const subject = encodeURIComponent(`Portfolio message from ${data.name}`);
+        const mailBody = encodeURIComponent(`${data.message}\n\n— ${data.name} (${data.email})`);
+        setStatus(`Couldn't send from here — opening your email app instead. You can also write to ${CONTACT_EMAIL}.`, 'warn');
+        window.location.href = `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${mailBody}`;
+      }
     });
   }
 
